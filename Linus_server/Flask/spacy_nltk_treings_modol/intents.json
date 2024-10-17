@@ -1,0 +1,421 @@
+{
+    "intents": [
+    {
+        "tag": "greeting",
+        "patterns": ["Hi", "Hello", "Good day", "Hey", "Is anyone there?"],
+        "responses": ["Hello! Welcome to Arcada University.", "Hi there! How can I assist you today?"]
+      },
+      {
+        "tag": "goodbye",
+        "patterns": ["Goodbye", "See you later", "Bye", "I have to go"],
+        "responses": ["Goodbye! Come visit us again.", "See you later!", "Take care!"]
+      },
+      {
+        "tag": "thanks",
+        "patterns": ["Thank you", "Thanks", "That's helpful", "Much appreciated"],
+        "responses": ["You're welcome!", "Glad I could help!", "Happy to assist!"]
+      },
+      {
+        "tag": "about_arcada",
+        "patterns": ["What is Arcada?", "Tell me about Arcada", "What does Arcada offer?", "What can I study at Arcada?"],
+        "responses": ["Arcada University of Applied Sciences is a modern, innovative learning environment located in Helsinki, Finland. It offers a variety of programs in Business Management, Health and Welfare, Media and Arts, IT, and more."]
+      },
+      {
+        "tag": "programs",
+        "patterns": ["What programs are available at Arcada?", "What courses does Arcada have?", "What can I study at Arcada?", "Do you offer business management?", "Do you offer health programs?"],
+        "responses": ["Arcada offers programs in Business Management, Health and Welfare, Media and Arts, Energy and Materials Technology, and Information Technology."]
+      },
+      {
+        "tag": "facilities",
+        "patterns": ["What facilities does Arcada have?", "Do you have a library?", "Are there labs at Arcada?", "What can I find on campus?"],
+        "responses": ["Arcada offers modern facilities including a library, lab spaces for nursing and engineering, a sports hall and gym, and a vibrant student hub."]
+      },
+      {
+        "tag": "international",
+        "patterns": ["Is Arcada international?", "Do you have international students?", "Can I study in English at Arcada?"],
+        "responses": ["Yes, Arcada has a diverse student body with students from all over the world. Many programs are offered in English, making it an ideal choice for international students."]
+      },
+      {
+        "tag": "location",
+        "patterns": ["Where is Arcada located?", "Where is Arcada University?", "How can I get to Arcada?", "Is Arcada in Helsinki?"],
+        "responses": ["Arcada is located in Arabianranta, a creative and innovation district in Helsinki, Finland."]
+      },
+      {
+        "tag": "student_life",
+        "patterns": ["What is student life like at Arcada?", "Are there events for students?", "What can students do at Arcada?"],
+        "responses": ["Arcada offers a vibrant student life with social events, sports activities, cultural festivals, and various student clubs. The Arcada Student Union (ASK) organizes activities throughout the year."]
+      },
+      {
+        "tag": "research",
+        "patterns": ["Does Arcada do research?", "What kind of research does Arcada focus on?", "Is Arcada involved in innovation?"],
+        "responses": ["Yes, Arcada is a hub for research and innovation, collaborating with industries in areas like sustainable technology, digital health, and entrepreneurship."]
+      },
+      {
+        "tag": "career",
+        "patterns": ["How does Arcada help with careers?", "Does Arcada offer internships?", "Can I get career support at Arcada?"],
+        "responses": ["Arcada has strong ties with industries, offering students opportunities for internships, work placements, and real-life projects. Career services are also available to help guide your career path."]
+      },
+      {
+        "tag": "andrey_shcherbakov",
+        "patterns": ["Who is Andrey Shcherbakov?", "Tell me about Andrey Shcherbakov", "What does Andrey Shcherbakov do at Arcada?"],
+        "responses": ["Andrey Shcherbakov is an IT educator at Arcada University. He inspires students through his unique combination of ICT education experience and fifteen years of expertise."]
+      },
+      {
+        "tag": "johan_penttinen",
+        "patterns": ["Who is Johan Penttinen?", "Tell me about Johan Penttinen", "What does Johan Penttinen do at Arcada?"],
+        "responses": ["Johan Penttinen is a junior developer specializing in Social Robots Development at Arcada University of Applied Sciences."]
+      },
+      {
+        "tag": "jonas_irjala",
+        "patterns": ["Who is Jonas Irjala?", "Tell me about Jonas Irjala", "What does Jonas Irjala do at Arcada?"],
+        "responses": ["Jonas Irjala is a junior developer at Arcada with a passion for graphic design and experience in Photoshop and Illustrator."]
+      },
+      {
+        "tag": "dennis_bistrom",
+        "patterns": ["Who is Dennis Biström?", "Tell me about Dennis Biström", "What does Dennis Biström do at Arcada?"],
+        "responses": ["Dennis Biström is an IT Lecturer and Head of DevLab at Arcada. He teaches full stack web programming and data management."]
+      },
+      {
+        "tag": "kristoffer_kuvaja_adolfsson",
+        "patterns": ["Who is Kristoffer Kuvaja-Adolfsson?", "Tell me about Kristoffer Kuvaja-Adolfsson", "What does Kristoffer Kuvaja-Adolfsson do at Arcada?"],
+        "responses": ["Kristoffer Kuvaja-Adolfsson is an IT Engineer and former practical nurse from Sweden. He has a newfound passion for IT."]
+      },
+      {
+        "tag": "leonardo_espinosa_leal",
+        "patterns": ["Who is Leonardo Espinosa-Leal?", "Tell me about Leonardo Espinosa-Leal", "What does Leonardo Espinosa-Leal do at Arcada?"],
+        "responses": ["Leonardo Espinosa-Leal is the Principal Lecturer in Technology and Head of A2I Lab at Arcada, with a broad range of research interests."]
+      },
+      {
+        "tag": "christa_tigerstedt",
+        "patterns": ["Who is Christa Tigerstedt?", "Tell me about Christa Tigerstedt", "What does Christa Tigerstedt do at Arcada?"],
+        "responses": ["Christa Tigerstedt (PhD) is Head of RoboLab, a trainer, project manager, and researcher in the Department of Business Management and Analytics at Arcada."]
+      },
+      {
+        "tag": "matteo_stocchetti",
+        "patterns": ["Who is Matteo Stocchetti?", "Tell me about Matteo Stocchetti", "What does Matteo Stocchetti do at Arcada?"],
+        "responses": ["Matteo Stocchetti is a Principal Lecturer in Media at Arcada and a Docent in Political Communication at Åbo Academy and Helsinki University."]
+      },
+      {
+        "tag": "magnus_westerlund",
+        "patterns": ["Who is Magnus Westerlund?", "Tell me about Magnus Westerlund", "What does Magnus Westerlund do at Arcada?"],
+        "responses": ["Dr. Magnus Westerlund is a Principal Lecturer in Information Technology and Director of the Laboratory for Trustworthy AI at Arcada."]
+      },
+      {
+        "tag": "robin_mildh",
+        "patterns": ["Who is Robin Mildh?", "Tell me about Robin Mildh", "What does Robin Mildh do at Arcada?"],
+        "responses": ["Robin Mildh is a junior developer and third-year IT student with extensive experience in open-source technology and cloud services."]
+      },
+      {
+        "tag": "pekka_buttler",
+        "patterns": ["Who is Pekka Buttler?", "Tell me about Pekka Buttler", "What does Pekka Buttler do at Arcada?"],
+        "responses": ["Pekka Buttler is a researcher at Arcada with a background in information systems science, project management, usability, and software business."]
+      },
+      {
+        "tag": "niklas_eriksson",
+        "patterns": ["Who is Niklas Eriksson?", "Tell me about Niklas Eriksson", "What does Niklas Eriksson do at Arcada?"],
+        "responses": ["Niklas Eriksson is Principal Lecturer in Digital Marketing at Arcada. He holds a PhD in Information Systems and is the Head of BCILab."]
+      },
+      {
+        "tag": "woubishet_taffese",
+        "patterns": ["Who is Woubishet Taffese?", "Tell me about Woubishet Taffese", "What does Woubishet Taffese do at Arcada?"],
+        "responses": ["Woubishet Taffese is a Postdoctoral Researcher at Arcada, developing AI models focused on building performance and sustainability."]
+      },
+      {
+        "tag": "kaj_mikael_bjork",
+        "patterns": ["Who is Kaj-Mikael Björk?", "Tell me about Kaj-Mikael Björk", "What does Kaj-Mikael Björk do at Arcada?"],
+        "responses": ["Kaj-Mikael Björk is a Principal Lecturer in Analytics and Logistics, Head of RiskLab, and Research Director at Arcada."]
+      },
+      {
+        "tag": "amin_majd",
+        "patterns": ["Who is Amin Majd?", "Tell me about Amin Majd", "What does Amin Majd do at Arcada?"],
+        "responses": ["Amin Majd is a former postdoctoral researcher at Arcada (2020-2022), now a Senior Advisor at Turku University of Applied Sciences."]
+      },
+      {
+        "tag": "truong_an_pham",
+        "patterns": ["Who is Truong An Pham?", "Tell me about Truong An Pham", "What does Truong An Pham do at Arcada?"],
+        "responses": ["Truong An Pham is a researcher at Arcada specializing in Human-Robot Interaction and Human-Computer Interaction."]
+      },
+        {
+        "tag": "truong_an_pham",
+        "patterns": ["Who is Truong An Pham?", "Tell me about Truong An Pham", "What does Truong An Pham do at Arcada?"],
+        "responses": ["Truong An Pham is a researcher at Arcada specializing in Human-Robot Interaction and Human-Computer Interaction."]
+      },
+      {
+        "tag": "andrey_shcherbakov",
+        "patterns": ["Who is Andrey Shcherbakov?", "Tell me about Andrey Shcherbakov", "What does Andrey Shcherbakov do at Arcada?"],
+        "responses": ["Andrey Shcherbakov is an IT educator at Arcada University, inspiring students with his ICT education experience."]
+      },
+      {
+        "tag": "johan_penttinen",
+        "patterns": ["Who is Johan Penttinen?", "Tell me about Johan Penttinen", "What does Johan Penttinen do at Arcada?"],
+        "responses": ["Johan Penttinen is a junior developer focused on Social Robots Development at Arcada University of Applied Sciences."]
+      },
+      {
+        "tag": "jonas_irjala",
+        "patterns": ["Who is Jonas Irjala?", "Tell me about Jonas Irjala", "What does Jonas Irjala do at Arcada?"],
+        "responses": ["Jonas Irjala is a junior developer with a passion for graphic design, experienced in Photoshop and Illustrator."]
+      },
+      {
+        "tag": "kristoffer_kuvaja_adolfsson",
+        "patterns": ["Who is Kristoffer Kuvaja-Adolfsson?", "Tell me about Kristoffer Kuvaja-Adolfsson", "What does Kristoffer Kuvaja-Adolfsson do at Arcada?"],
+        "responses": ["Kristoffer Kuvaja-Adolfsson is an IT Engineer from Sweden with a newfound passion for IT."]
+      },
+      {
+        "tag": "leonardo_espinosa_leal",
+        "patterns": ["Who is Leonardo Espinosa-Leal?", "Tell me about Leonardo Espinosa-Leal", "What does Leonardo Espinosa-Leal do at Arcada?"],
+        "responses": ["Leonardo Espinosa-Leal is the Principal Lecturer in Technology and Head of A2I Lab at Arcada."]
+      },
+      {
+        "tag": "christa_tigerstedt",
+        "patterns": ["Who is Christa Tigerstedt?", "Tell me about Christa Tigerstedt", "What does Christa Tigerstedt do at Arcada?"],
+        "responses": ["Christa Tigerstedt is a PhD holder and Head of RoboLab at Arcada, focusing on business management and analytics."]
+      },
+      {
+        "tag": "matteo_stocchetti",
+        "patterns": ["Who is Matteo Stocchetti?", "Tell me about Matteo Stocchetti", "What does Matteo Stocchetti do at Arcada?"],
+        "responses": ["Matteo Stocchetti is a Principal Lecturer in Media at Arcada and a Docent in Political Communication."]
+      },
+      {
+        "tag": "magnus_westerlund",
+        "patterns": ["Who is Magnus Westerlund?", "Tell me about Magnus Westerlund", "What does Magnus Westerlund do at Arcada?"],
+        "responses": ["Dr. Magnus Westerlund is a Principal Lecturer in Information Technology and Director of the Laboratory for Trustworthy AI."]
+      },
+      {
+        "tag": "robin_mildh",
+        "patterns": ["Who is Robin Mildh?", "Tell me about Robin Mildh", "What does Robin Mildh do at Arcada?"],
+        "responses": ["Robin Mildh is a junior developer and third-year IT student experienced in open-source technology."]
+      },
+      {
+        "tag": "pekka_buttler",
+        "patterns": ["Who is Pekka Buttler?", "Tell me about Pekka Buttler", "What does Pekka Buttler do at Arcada?"],
+        "responses": ["Pekka Buttler is a researcher specializing in information systems science and project management at Arcada."]
+      },
+      {
+        "tag": "niklas_eriksson",
+        "patterns": ["Who is Niklas Eriksson?", "Tell me about Niklas Eriksson", "What does Niklas Eriksson do at Arcada?"],
+        "responses": ["Niklas Eriksson is a Principal Lecturer in Digital Marketing and Head of BCILab at Arcada."]
+      },
+      {
+        "tag": "woubishet_taffese",
+        "patterns": ["Who is Woubishet Taffese?", "Tell me about Woubishet Taffese", "What does Woubishet Taffese do at Arcada?"],
+        "responses": ["Woubishet Taffese is a Postdoctoral Researcher at Arcada, developing AI models focused on building performance."]
+      },
+      {
+        "tag": "kaj_mikael_bjork",
+        "patterns": ["Who is Kaj-Mikael Björk?", "Tell me about Kaj-Mikael Björk", "What does Kaj-Mikael Björk do at Arcada?"],
+        "responses": ["Kaj-Mikael Björk is a Principal Lecturer in Analytics and Logistics, and Head of RiskLab at Arcada."]
+      },
+      {
+        "tag": "amin_majd",
+        "patterns": ["Who is Amin Majd?", "Tell me about Amin Majd", "What does Amin Majd do at Arcada?"],
+        "responses": ["Amin Majd is a former postdoctoral researcher and now a Senior Advisor at Turku University of Applied Sciences."]
+      },
+      {
+        "tag": "research_projects",
+        "patterns": ["What research projects are happening at Arcada?", "Can you tell me about Arcada's research?", "What does Arcada research focus on?"],
+        "responses": ["Arcada focuses on various research projects including sustainable technology, digital health, and innovation in education."]
+      },
+      {
+        "tag": "student_experience",
+        "patterns": ["What is the student experience like at Arcada?", "How do students feel about studying at Arcada?", "What do students say about Arcada?"],
+        "responses": ["Students at Arcada report a supportive environment with great facilities, active student life, and engaging faculty."]
+      },
+      {
+        "tag": "career_services",
+        "patterns": ["What career services does Arcada offer?", "How can Arcada help with my career?", "Does Arcada provide career counseling?"],
+        "responses": ["Arcada offers career counseling, internships, and job placement services to help students transition into the workforce."]
+      },
+      {
+        "tag": "international_programs",
+        "patterns": ["Does Arcada offer international programs?", "Are there programs in English at Arcada?", "How international is Arcada?"],
+        "responses": ["Yes, many programs at Arcada are offered in English, attracting a diverse student body from around the world."]
+      },
+      {
+        "tag": "tuition_fees",
+        "patterns": ["What are the tuition fees at Arcada?", "How much does it cost to study at Arcada?", "Can you tell me about the fees for Arcada?"],
+        "responses": ["Tuition fees at Arcada vary by program. For detailed information, please visit the Arcada website."]
+      },
+      {
+        "tag": "scholarships",
+        "patterns": ["Are there scholarships available at Arcada?", "How can I apply for a scholarship at Arcada?", "What kind of financial aid does Arcada offer?"],
+        "responses": ["Arcada offers various scholarships for international students. Check the website for application details."]
+      },
+      {
+        "tag": "campus_facilities",
+        "patterns": ["What facilities are available on campus?", "Does Arcada have a library?", "What can I find in Arcada's campus?"],
+        "responses": ["Arcada's campus features modern facilities, including a library, laboratories, a gym, and student lounges."]
+      },
+      {
+        "tag": "student_life",
+        "patterns": ["What is student life like at Arcada?", "Are there events for students?", "What can students do outside of class at Arcada?"],
+        "responses": ["Arcada offers a vibrant student life with events, clubs, and activities organized by the Student Union."]
+      },
+      {
+        "tag": "locations_nearby",
+        "patterns": ["What is there to do near Arcada?", "Are there any attractions close to Arcada?", "What can I explore around Arcada?"],
+        "responses": ["Arcada is located in Arabianranta, surrounded by cafes, parks, and cultural sites in Helsinki."]
+      },
+      {
+        "tag": "events",
+        "patterns": ["What events are held at Arcada?", "Are there any upcoming events at Arcada?", "Can students participate in events at Arcada?"],
+        "responses": ["Arcada hosts various events throughout the year, including seminars, workshops, and cultural celebrations."]
+      },
+       {
+        "tag": "arcada_overview",
+        "patterns": ["What is Arcada?", "Tell me about Arcada.", "What does Arcada do?"],
+        "responses": ["Arcada is a university of applied sciences located in Helsinki, Finland, offering a variety of programs in technology, health care, business, and media."]
+      },
+      {
+        "tag": "arcada_location",
+        "patterns": ["Where is Arcada located?", "What city is Arcada in?", "Tell me about Arcada's location."],
+        "responses": ["Arcada is located in Arabianranta, a vibrant area in Helsinki known for its modern architecture and waterfront."]
+      },
+      {
+        "tag": "arcada_programs",
+        "patterns": ["What programs does Arcada offer?", "Can you list the programs at Arcada?", "What can I study at Arcada?"],
+        "responses": ["Arcada offers bachelor’s and master’s degree programs in fields like engineering, health care, business, and media."]
+      },
+      {
+        "tag": "arcada_research",
+        "patterns": ["What kind of research is done at Arcada?", "Tell me about Arcada's research focus.", "Does Arcada engage in research?"],
+        "responses": ["Arcada engages in applied research, focusing on areas like technology, health care, and social innovation."]
+      },
+      {
+        "tag": "arcada_student_life",
+        "patterns": ["What is student life like at Arcada?", "How do students spend their time at Arcada?", "What activities are available for students at Arcada?"],
+        "responses": ["Student life at Arcada is vibrant, with various clubs, events, and activities organized by the Student Union."]
+      },
+      {
+        "tag": "arcada_international",
+        "patterns": ["Is Arcada an international university?", "Does Arcada have international students?", "How international is Arcada?"],
+        "responses": ["Yes, Arcada has a diverse student body, with many international students from various countries studying here."]
+      },
+      {
+        "tag": "arcada_admissions",
+        "patterns": ["How can I apply to Arcada?", "What are the admission requirements for Arcada?", "Can I study at Arcada?"],
+        "responses": ["To apply to Arcada, you need to meet specific admission requirements and submit an application through the Finnish Joint Application system."]
+      },
+      {
+        "tag": "arcada_tuition",
+        "patterns": ["What are the tuition fees at Arcada?", "How much does it cost to study at Arcada?", "Are there any fees for studying at Arcada?"],
+        "responses": ["Tuition fees at Arcada vary depending on the program. For EU/EEA students, there are typically no fees, while non-EU students may pay fees."]
+      },
+      {
+        "tag": "arcada_scholarships",
+        "patterns": ["Are there scholarships available at Arcada?", "How can I apply for a scholarship at Arcada?", "What financial aid does Arcada offer?"],
+        "responses": ["Arcada offers several scholarships for international students. Visit the website for more details on available scholarships."]
+      },
+      {
+        "tag": "arcada_facilities",
+        "patterns": ["What facilities does Arcada have?", "Are there libraries and labs at Arcada?", "What can I find on the Arcada campus?"],
+        "responses": ["Arcada's campus includes modern classrooms, laboratories, a library, and student lounges, creating a conducive learning environment."]
+      },
+      {
+        "tag": "arcada_student_support",
+        "patterns": ["What kind of support does Arcada offer students?", "Are there counseling services at Arcada?", "How can students get help at Arcada?"],
+        "responses": ["Arcada provides various support services, including academic advising, counseling, and health services to help students succeed."]
+      },
+      {
+        "tag": "arcada_student_union",
+        "patterns": ["What is the Student Union at Arcada?", "How can I join the Student Union at Arcada?", "What does the Student Union do at Arcada?"],
+        "responses": ["The Student Union at Arcada represents students’ interests, organizes events, and provides various services to enhance student life."]
+      },
+      {
+        "tag": "arcada_career_services",
+        "patterns": ["What career services are available at Arcada?", "How can Arcada help me find a job?", "Does Arcada offer career counseling?"],
+        "responses": ["Arcada offers career services, including job placements, internships, and workshops to prepare students for the workforce."]
+      },
+      {
+        "tag": "arcada_networking",
+        "patterns": ["Does Arcada help students network?", "How can I connect with professionals through Arcada?", "Are there networking opportunities at Arcada?"],
+        "responses": ["Arcada hosts various networking events and collaborates with industry partners to provide students with opportunities to connect with professionals."]
+      },
+      {
+        "tag": "arcada_programs",
+        "patterns": ["What programs does Arcada offer?", "What degrees can you study at Arcada?", "Does Arcada offer bachelor's and master's programs?"],
+        "responses": ["Arcada offers a wide range of bachelor’s and master’s degree programs in fields such as business, engineering, healthcare, and media."]
+      },
+      {
+        "tag": "arcada_location",
+        "patterns": ["Where is Arcada located?", "What is the address of Arcada?", "How do I get to Arcada?"],
+        "responses": ["Arcada is located in Helsinki, Finland. The campus is situated in the Arabianranta area, which is easily accessible by public transportation."]
+      },
+      {
+        "tag": "arcada_student_life",
+        "patterns": ["What is the student life like at Arcada?", "What can students do for fun at Arcada?", "Are there student clubs at Arcada?"],
+        "responses": ["Arcada has an active student life with various student clubs, events, and activities. The Arcada Student Union organizes many social events, and there are sports and cultural activities for everyone."]
+      },
+      {
+        "tag": "arcada_rector",
+        "patterns": ["Who is the rector of Arcada?", "Who leads Arcada University of Applied Sciences?", "Who is the current rector at Arcada?"],
+        "responses": ["The current rector of Arcada University of Applied Sciences is Mona Forsskåhl, who is responsible for the overall leadership of the institution."]
+      },
+      {
+        "tag": "arcada_research",
+        "patterns": ["What research areas does Arcada focus on?", "What kind of research is done at Arcada?", "Does Arcada have research programs?"],
+        "responses": ["Arcada focuses on applied research in fields such as healthcare, energy technology, business development, and digital solutions, aimed at solving real-world problems."]
+      },
+      {
+        "tag": "arcada_facilities",
+        "patterns": ["What facilities does Arcada have?", "Are there labs and studios at Arcada?", "Does Arcada have a gym or a library?"],
+        "responses": ["Arcada offers modern facilities, including high-tech labs, media studios, a library, a gym, and a cafeteria. The campus is designed to support both academic work and student life."]
+      },
+      {
+        "tag": "arcada_admissions",
+        "patterns": ["How can I apply to Arcada?", "What is the admissions process for Arcada?", "What are the application requirements for Arcada?"],
+        "responses": ["You can apply to Arcada through the Finnish Joint Application system. Admission requirements vary by program, but generally include previous educational qualifications and language proficiency."]
+      },
+      {
+        "tag": "arcada_international",
+        "patterns": ["What international opportunities are available at Arcada?", "Can I study abroad through Arcada?", "Does Arcada have exchange programs?"],
+        "responses": ["Arcada offers a variety of international opportunities, including exchange programs, internships abroad, and partnerships with universities worldwide. Arcada encourages students to gain international experience."]
+      },
+      {
+        "tag": "arcada_student_union",
+        "patterns": ["What is the Arcada student union called?", "Is there a student union at Arcada?", "How can I join the student union at Arcada?"],
+        "responses": ["The Arcada Student Union, also known as ASK, represents student interests and organizes various activities and services to support student life. All students are welcome to join."]
+      },
+      {
+        "tag": "arcada_innovation",
+        "patterns": ["What is Arcada's approach to innovation?", "How does Arcada promote innovation?", "Does Arcada support creative thinking?"],
+        "responses": ["Arcada promotes innovation through project-based learning, research collaborations with industry, and by offering courses that encourage creative problem-solving and entrepreneurship."]
+      },
+      {
+        "tag": "arcada_entrepreneurship",
+        "patterns": ["How does Arcada support entrepreneurship?", "Are there startup opportunities at Arcada?", "Can students launch businesses at Arcada?"],
+        "responses": ["Arcada supports entrepreneurship through its business incubators, startup programs, and partnerships with the local business community. Students are encouraged to develop their own business ideas."]
+      },
+      {
+        "tag": "arcada_sustainability",
+        "patterns": ["What are Arcada’s sustainability initiatives?", "How does Arcada promote sustainability?", "Does Arcada have environmental programs?"],
+        "responses": ["Arcada is committed to sustainability with initiatives focused on green campus operations, sustainable education, and research aimed at creating a more sustainable society."]
+      },
+      {
+        "tag": "arcada_history",
+        "patterns": ["What is the history of Arcada?", "When was Arcada founded?", "What is Arcada’s background?"],
+        "responses": ["Arcada was founded in 1996 and has since grown into one of Finland’s leading universities of applied sciences, known for its strong focus on innovation and practical education."]
+      },
+      {
+        "tag": "arcada_finnish_education",
+        "patterns": ["What is Arcada’s role in Finnish higher education?", "How does Arcada fit into the Finnish education system?", "Is Arcada a part of Finnish higher education?"],
+        "responses": ["Arcada plays a key role in the Finnish higher education system as a university of applied sciences, focusing on practical education and close industry collaboration to meet the needs of the job market."]
+      },
+      {
+        "tag": "arcada_industry_collaboration",
+        "patterns": ["What collaboration does Arcada have with industries?", "Does Arcada work with companies?", "How does Arcada collaborate with businesses?"],
+        "responses": ["Arcada collaborates with various industries, providing students with opportunities for internships, project work, and research partnerships, ensuring that education is closely linked to real-world needs."]
+      },
+      {
+        "tag": "robot_lab",
+        "patterns": ["Can you tell me about the robot lab?", "What do you do in the robot lab?", "What is robotics in a lab environment?"],
+        "responses": ["The robot lab focuses on developing and testing robotics.", "In the robot lab, we work on creating and programming robots.", "The robot lab is where we develop innovative robotic solutions."]
+      },
+      {
+        "tag": "arcada_techlab",
+        "patterns": ["Can you tell me about Arcada Techlab?", "What do they do at Arcada Techlab?", "What is Arcada Techlab?", "What kind of projects happen at Arcada Techlab?"],
+        "responses": ["Arcada Techlab is a hub for innovative technology projects and research.", "At Arcada Techlab, students and researchers work on cutting-edge technology, including robotics, AI, and IoT.", "Arcada Techlab provides resources and facilities for hands-on learning and experimentation in tech development."]
+      }
+
+    ]
+  }
+  

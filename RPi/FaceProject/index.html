@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Robot Face</title>
+</head>
+
+<body>
+	<p><span id="svg-container"> </span></p>
+	<script src="/FaceLibrary/Face_Library.js?v=1.0"></script>
+
+	<script>
+		let localStorageData = localStorage.getItem("control_Panel");
+		if(localStorageData){
+			console.log(localStorage.getItem("control_Panel"));
+			// getFaceByJS(localStorageData);
+		}	
+		const stream = new EventSource("/api/stream");
+		stream.onmessage = (e) => {
+			const { data } = e;
+			console.log("Data:", data);
+			getFaceByJS(data);
+			localStorage.setItem("control_Panel", data);
+		};
+		// Koden nedan körs som standard om ingen ansiktsuttrycksparameter väljs
+	</script>
+</body>
+
+</html>

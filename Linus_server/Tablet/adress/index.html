@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TecLabs</title>
+    <link rel="icon" href="../../img/logo_png.png" type="image/x-icon">
+    <!-- Bootstrap 5 CSS -->
+    <link href="../bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" href="../robot.css">
+    
+    
+</head>
+
+<body>
+  
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light navbar-custom">
+        <div class="container-fluid ">
+            <!-- Navbar brand with logo and text -->
+            <a class="navbar-brand justify-content-start" href="../">
+                <img src="../../img/nedladdning.svg" alt="Logo">
+            </a>
+
+            <!-- Two separate div elements for positioning the content -->
+            <div class="d-flex flex-row align-items-center">
+                <div class="p-2 video-container">
+                    <video id="myVideo" width="100px" height="auto" controls autoplay loop>
+                        <source src="../../img/robot2.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+
+                  <!-- Navbar toggle button for small screens -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+
+                <div class="p-2 ml-auto">
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link text-white fw-bold" href="#SV">SV</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="#FI">FI</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="#EN">EN</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        </div>
+    </nav>
+
+    <!-- Main content -->
+    <div id="content-container-info"></div>
+         <!-- Footer -->
+         <footer class="footer-fluid  ">
+            <div class="container-fluid d-flex justify-content-between align-items-center footer-custom">
+                <!-- Logo on the left -->
+                <div class="logo  " >
+                    <img src="../../img/nedladdning.svg" alt="Logo" width="100" height="100">
+                    <!-- <a class="navbar-brand justify-content-start" href="#">
+                        <img src="../img/nedladdning.svg" alt="Logo">
+                    </a> -->
+                </div>
+                <!-- Exit button on the right -->
+              
+
+                <div class="exit-button">
+                    <a href="../" class="btn btn btn-dark" style="width: 10rem;">Exit</a>
+                </div>
+                
+            </div>
+        </footer>
+        <!-- Bootstrap JS and dependencies -->
+        <script src="../bootstrap.bundle.min.js"></script>
+
+            <script src="../robot.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TecLabs</title>
+    <link rel="icon" href="../../img/logo_png.png" type="image/x-icon">
+    <!-- Bootstrap 5 CSS -->
+    <link href="../bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../robot.css">
+    <style>
+        .container_Swaps_face {
+            position: relative;
+            text-align: center;
+            margin-bottom: 20px;
+            border: 10px solid #0068DE;
+            border-top-width: 40px;
+            /* min-width: 350px;
+            max-width: 350px; */
+            /* min-height: 370px; */
+            max-height: 750px;
+            min-width: 800px;
+            padding: 10px;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .top-text {
+            position: absolute;
+            top: -30px;
+            /* Adjust the positioning as needed */
+            left: 50%;
+            /* align-items: center; */
+            text-align: center;
+            transform: translateX(-50%);
+            background-color: #0068DE;
+            /* Match the container border color */
+            color: white;
+            /* Set the text color */
+            font-size: 20px;
+            font-weight: bold;
+
+        }
+
+        .control-panel {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .input-container {
+            /* display: flex; */
+            align-items: center;
+        }
+
+        .selectedInput {
+            width: 200px;
+            padding: 8px;
+            font-size: 16px;
+            margin-right: 10px;
+            border: 5px solid #0068DE;
+            border-radius: 5px;
+        }
+
+        .selectedInputTextarea {
+            width: 100%;
+            /* Use 100% width to fill the container */
+            height: 80px;
+            /* Adjust the height as needed */
+            padding: 8px;
+            font-size: 16px;
+            margin-right: 10px;
+            border: 1px solid #0068DE;
+            border-radius: 5px;
+            resize: vertical;
+            /* Allow vertical resizing */
+        }
+
+        .submit-button {
+            font-size: 16px;
+            margin: 10px;
+            padding: 8px 20px;
+            /* border: none; */
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #004DBE;
+            color: white;
+        }
+
+        .submit-button :hover {
+            background-color: #0068DE;
+        }
+
+        .expression-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .expression-item {
+            cursor: pointer;
+            padding: 8px;
+            margin: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .expression-item:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
+    <!-- /* CSS for keyboard layout */ -->
+    <style>
+        /* CSS for keyboard layout */
+        .keyboard {
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+            gap: 11px;
+            padding: 15px;
+            border: 1px solid #0068DE;
+            /* border-top-width: 40px; */
+            border-radius: 5px;
+            /* max-width: 400px; */
+            margin: 0 auto;
+        }
+
+        .key {
+            padding: 20px;
+            text-align: center;
+            background-color: #f0f0f0;
+            cursor: pointer;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .key:hover {
+            background-color: #e0e0e0;
+        }
+    </style>
+    <!-- ../../img/arcada_blac_text.png -->
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light navbar-custom">
+
+        <div class="container lag-bottons" style="  max-width: 100% !important;">
+            <!-- Navbar brand with logo and text -->
+            <a href="../">
+                <img class="custom-logo " src="../img/nedladdning.svg" alt="Logo">
+            </a>
+
+
+            <!-- Two separate div elements for positioning the content -->
+            <div class="d-flex flex-row ">
+                <div class="p-2  video-container">
+
+                </div>
+
+                <!-- Navbar toggle button for small screens -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+
+                <div class="p-2 ml-auto">
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link text-white language-button fw-bold" href="#SV"></a>
+                                <!-- <button class="btn btn-danger"  style="width: 10rem;">Exit</button> -->
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white language-button" href="#FI"></a>
+                                <!-- <button class="btn btn-danger"  style="width: 10rem;">Exit</button> -->
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white language-button " href="#EN">EN</a>
+                                <!-- <button class="btn btn-danger"  style="width: 10rem;">Exit</button> -->
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+        </div>
+    </nav>
+
+    <!-- Main content -->
+    <!-- template info html  -->
+
+    <div class="p-5 " style="padding-bottom: 2rem !important; padding-left: 17rem !important; padding-right: 17rem !important; ">
+
+        <div class="">
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-12 text-center mb-4">
+                    <!-- <div class="row"> -->
+                        <div class="col-md-10" style="width: 100% !important ; ">
+                            <!-- <h1>Yrkeshögskolan Arcada</h1> -->
+                            <div class="container_Swaps_face">
+                                <div class="top-text">Text to speech</div>
+    
+                                <p>Click to control the text to speech:</p>
+                                <div class="expression-list">
+                                    <div class="expression-item" onclick="setText('Can you help me?')">Help?</div>
+                                    <div class="expression-item" onclick="setText('Who is Dennis ?')">Dennis?</div>
+                                    <div class="expression-item" onclick="setText('what is Arcada ?')">Arcada?</div>
+                                    <div class="expression-item" onclick="setText('Who is Christa Tigerstedt')">Christa?</div>
+                                    <div class="expression-item" onclick="setText('What is robot lab ?')">Robot Lab?</div>
+
+                                    <div class="expression-item" onclick="setText('What programs does Arcada offer?')">Programs?</div>
+                                    <div class="expression-item" onclick="setText('Where is Arcada located?')">Location?</div>
+                                    <div class="expression-item" onclick="setText('What is the student life like at Arcada?')">Student Life?</div>
+                                    <div class="expression-item" onclick="setText('Who is the rector of Arcada?')">Rector?</div>
+                                    <div class="expression-item" onclick="setText('What research areas does Arcada focus on?')">Research?</div>
+                                    
+                                    <div class="expression-item" onclick="setText('What facilities does Arcada have?')">Facilities?</div>
+                                    <div class="expression-item" onclick="setText('How can I apply to Arcada?')">Admissions?</div>
+                                    <div class="expression-item" onclick="setText('What international opportunities are available at Arcada?')">International?</div>
+                                    <div class="expression-item" onclick="setText('What is the Arcada student union called?')">Student Union?</div>
+                                    <div class="expression-item" onclick="setText('What is Arcadas approach to innovation?')">Innovation?</div>
+                                    
+                                    <div class="expression-item" onclick="setText('How does Arcada support entrepreneurship?')">Entrepreneurship?</div>
+                                    <div class="expression-item" onclick="setText('What are Arcada’s sustainability initiatives?')">Sustainability?</div>
+                                    <div class="expression-item" onclick="setText('What is the history of Arcada?')">History?</div>
+                                    <div class="expression-item" onclick="setText('What is Arcada’s role in Finnish higher education?')">Finnish Education?</div>
+                                    <div class="expression-item" onclick="setText('What collaboration does Arcada have with industries?')">Industry Collaboration?</div>
+                                </div>
+    
+                                <form id="input-form-text" class="input-container">
+                                    <!-- <input class="selectedInput" type="text" id="text-input" name="textInput" placeholder="Selected Expression"> -->
+                                    <textarea class="selectedInputTextarea" id="text-input" name="textInput"
+                                        placeholder="Selected Expression"></textarea>
+                                    <div class="keyboard">
+                                        <div class="key" onclick="addCharacter('1')" >1</div>
+                                        <div class="key" onclick="addCharacter('2')" >2</div>
+                                        <div class="key" onclick="addCharacter('3')" >3</div>
+                                        <div class="key" onclick="addCharacter('4')" >4</div>
+                                        <div class="key" onclick="addCharacter('5')" >5</div>
+                                        <div class="key" onclick="addCharacter('6')" >6</div>
+                                        <div class="key" onclick="addCharacter('7')" >7</div>
+                                        <div class="key" onclick="addCharacter('8')" >8</div>
+                                        <div class="key" onclick="addCharacter('9')" >9</div>
+                                        <div class="key" onclick="addCharacter('0')" >0</div>
+
+                                        
+                                            <div class="key" onclick="addCharacter('q')" >q</div>
+                                            <div class="key" onclick="addCharacter('w')" >w</div>
+                                            <div class="key" onclick="addCharacter('e')" >e</div>
+                                            <div class="key" onclick="addCharacter('r')">r</div>
+                                            <div class="key" onclick="addCharacter('t')">t</div>
+                                            <div class="key" onclick="addCharacter('y')">y</div>
+                                            <div class="key" onclick="addCharacter('u')">u</div>
+                                            <div class="key" onclick="addCharacter('i')">i</div>
+                                            <div class="key" onclick="addCharacter('o')">o</div>
+                                            <div class="key" onclick="addCharacter('p')">p</div>
+                                    
+                                            <div class="key" onclick="addCharacter('a')">a</div>
+                                            <div class="key" onclick="addCharacter('s')">s</div>
+                                            <div class="key" onclick="addCharacter('d')">d</div>
+                                            <div class="key" onclick="addCharacter('f')">f</div>
+                                            <div class="key" onclick="addCharacter('g')">g</div>
+                                            <div class="key" onclick="addCharacter('h')">h</div>
+                                            <div class="key" onclick="addCharacter('j')">j</div>
+                                            <div class="key" onclick="addCharacter('k')">k</div>
+                                            <div class="key" onclick="addCharacter('l')">l</div>
+                                            <div class="key" onclick="backspace()">Backspace</div>
+                                  
+                                            <div class="key" onclick="addCharacter('z')">z</div>
+                                            <div class="key" onclick="addCharacter('x')">x</div>
+                                            <div class="key" onclick="addCharacter('c')">c</div>
+                                            <div class="key" onclick="addCharacter('v')">v</div>
+                                            <div class="key" onclick="addCharacter('b')">b</div>
+                                            <div class="key" onclick="addCharacter('n')">n</div>
+                                            <div class="key" onclick="addCharacter('m')">m</div>
+                                            <!-- <div class="key" onclick="addCharacter(',')">,</div> -->
+                                            <div class="key" onclick="addCharacter('.')">.</div>
+                                          
+                                            <div class="key" onclick="addCharacter(' ')">Space</div>
+                                            <div class="key" onclick="toggleCapsLock()">Caps Lock</div>
+                                        
+                                    </div>
+                                   
+                                    <!-- Space key -->
+                                    <button class="submit-button" onclick="clearInput()">Clear</button>
+                                    <button class="submit-button" id="btn-request-text" type="submit">Send
+                                        Request</button>
+                                </form>
+                            </div>
+                        </div>
+                    <!-- </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="  footer  ">
+        <div class="container-fluid d-flex justify-content-between align-items-center footer-custom">
+            <div class="logo  ">
+                <!-- <img src="../../img/nedladdning.svg" alt="Logo" width="100" height="100"> -->
+            </div>
+            <div class="exit-button clickable-image-Exit">
+                <a href="../" class="btn btn btn-dark" id="stopBtn" style="width: 10rem;">Exit</a>
+
+            </div>
+        </div>
+    </footer>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="../bootstrap.bundle.min.js"></script>
+    <!-- keyboard script  -->
+    <script>
+        function addCharacter(character) {
+            var input = document.getElementById("text-input");
+            input.value += character;
+        }
+        function clearInput() {
+            var input = document.getElementById("text-input");
+            input.value = "";
+        }
+        function backspace() {
+        var input = document.getElementById("text-input");
+        var currentValue = input.value;
+        input.value = currentValue.slice(0, -1); // Remove the last character
+    }
+
+    var capsLockEnabled = false;
+
+function toggleCapsLock() {
+    capsLockEnabled = !capsLockEnabled;
+    var keys = document.querySelectorAll('.key');
+    keys.forEach(function(key) {
+        var letter = key.textContent.toLowerCase();
+        if (capsLockEnabled) {
+            key.textContent = letter.toUpperCase();
+        } else {
+            key.textContent = letter;
+        }
+    });
+}
+
+
+function addCharacter(character) {
+        var input = document.getElementById("text-input");
+        if (capsLockEnabled && /[a-z]/.test(character)) {
+            input.value += character.toUpperCase();
+        } else {
+            input.value += character.toLowerCase();
+        }
+    }
+
+    function backspace() {
+        var input = document.getElementById("text-input");
+        var currentValue = input.value;
+        input.value = currentValue.slice(0, -1); // Remove the last character
+    }
+ 
+    </script>
+    <script>
+        //  Section for text to speech
+        const textInput = document.getElementById("text-input");
+        function setText(input) {
+            textInput.value = input;
+            console.log("textInput: " + textInput.value);
+        }
+        const inputFormText = document.getElementById("input-form-text");
+        if (inputFormText) {
+            console.log("textInput: " + textInput.value);
+            inputFormText.addEventListener("submit", async (ev) => {
+                ev.preventDefault();
+
+                if (!textInput) {
+                    console.log("No input set");
+                    return;
+                }
+                const response = await fetch(`http://localhost:5100/api/post?text=${textInput.value}`);
+                if (!response.ok) {
+                    console.log("Something went wrong.");
+                    return;
+                }
+                const data = await response.text();
+                if (data === "OK") {
+                    console.log("SUCCESS");
+                }
+            });
+        }
+    </script>
+    <script src="../robot.js"></script>
+    <script src="../statistik.js"></script>
+</body>
+</html>

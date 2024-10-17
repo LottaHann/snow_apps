@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TecLabs</title>
+    <link rel="icon" href="../../img/logo_png.png" type="image/x-icon">
+    <!-- Bootstrap 5 CSS -->
+    <link href="../bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="../robot.css">
+
+    <style>
+        table {
+            width: 100%;
+            max-width: 1200px;
+            border-collapse: collapse;
+            border: 15px solid #0d6efd;
+            border-radius: 25px;
+            margin: auto; /* Center the table horizontally */
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #0099ff;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light navbar-custom">
+        <div class="container lag-bottons" style="max-width: 100% !important;">
+            <!-- Navbar brand with logo and text -->
+            <a href="../">
+                <img class="custom-logo" src="../img/nedladdning.svg" alt="Logo">
+            </a>
+            <!-- Two separate div elements for positioning the content -->
+            <div class="d-flex flex-row">
+                <div class="p-2 video-container">
+                    <!-- Video (kommenterad ut) -->
+                </div>
+                <!-- Navbar toggle button for small screens -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="p-2 ml-auto">
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link text-white language-button fw-bold" href="#SV"></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white language-button" href="#FI"></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white language-button" href="#EN">EN</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main content -->
+    <div class="p-5 justify-content-center" style="padding-bottom: 2rem !important;">
+        <div>
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-12 text-left mb-4">
+                    <div class="row">
+                        <h2 class="css-kj9vo7 custom-h2">Statistics</h2>
+                        <table id="data-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Page</th>
+                                    <th>Time Spent</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Data will be inserted here by JavaScript -->
+                            </tbody>
+                        </table>
+                        <div class="col-md-6">
+                            <h2 class="css-kj9vo7 custom-h2">Snow</h2>
+                            <p class="custom-text" style="padding-bottom: 50px;">
+                                Hallå där! Välkommen till Techlabs. <br> Jag är roboten Snow och jag jobbar här. <br> Kom gärna fram och lär dig mera om mig.
+                            </p>
+                        </div>
+                        <div class="col-md-6 text-right custom-techlabs-img">
+                            <div class="container_Swaps_face">
+                                <!-- Eventuella bilder eller annan media här -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container-fluid d-flex justify-content-between align-items-center footer-custom">
+            <div class="logo">
+                <!-- Logotyp här -->
+            </div>
+            <div class="exit-button clickable-image-Exit">
+                <a href="../" class="btn btn-dark" id="stopBtn" style="width: 10rem;">Exit</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="../bootstrap.bundle.min.js"></script>
+    <script>
+        // Funktion för att läsa data från localStorage
+        function readData() {
+            let allData = localStorage.getItem('pageData');
+            if (allData === null) {
+                return [];
+            } else {
+                return JSON.parse(allData);
+            }
+        }
+
+        // Funktion för att rendera data i tabellen
+        function renderTable(data) {
+            const tableBody = document.getElementById('data-table').querySelector('tbody');
+            tableBody.innerHTML = ''; // Rensa befintligt innehåll
+
+            data.forEach(item => {
+                const row = document.createElement('tr');
+
+                const idCell = document.createElement('td');
+                idCell.textContent = item.id;
+                row.appendChild(idCell);
+
+                const pageCell = document.createElement('td');
+                pageCell.textContent = item.page;
+                row.appendChild(pageCell);
+
+                const timeCell = document.createElement('td');
+                timeCell.textContent = item.time;
+                row.appendChild(timeCell);
+
+                tableBody.appendChild(row);
+            });
+        }
+
+        // Läsa data från localStorage och rendera tabellen
+        const data = readData();
+        renderTable(data);
+    </script>
+
+    <!-- Andra JavaScript-filer -->
+    <script src="../robot.js"></script>
+    <script src="../statistik.js"></script>
+    <script src="../chart.js"></script>
+</body>
+
+</html>

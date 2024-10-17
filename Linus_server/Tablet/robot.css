@@ -1,0 +1,282 @@
+.navbar-custom {
+    background-image: url('../img/blue_wall.svg');
+    background-size: 100% 100%;
+    background-position: initial;
+    background-repeat: no-repeat;
+
+    width: 100%;
+    min-height: 160px;
+    /* height: 160 px; */
+
+    width: 100%;
+    padding-right: var(--bs-gutter-x, .75rem);
+    padding-left: var(--bs-gutter-x, .75rem);
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.navbar-custom .navbar-brand {
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    /* margin-left: 1.5rem;
+    margin-top: 1.4rem; */
+
+}
+
+.navbar-custom .navbar-brand img {
+    width: 40px;
+    /* Set your desired width for the logo */
+    margin-right: 10px;
+    /* Adjust the margin between logo and text */
+    width: 100px;
+    height: 100px;
+
+
+}
+
+.card {
+    width: 10rem;
+    border-radius: 10px !important;
+}
+
+.card-title {
+    font-size: 1.5rem;
+}
+
+.custom-btn {
+    color: black;
+    /* Set the desired text color */
+
+}
+
+.custom-btn:hover {
+    color: #9FC1FF;
+    /* Set the desired text color */
+
+}
+
+.video-container {
+    border-radius: 20px;
+    /* Set the desired border radius value */
+    overflow: hidden;
+    /* Ensure the video stays within the curved border */
+}
+
+.footer-fluid {
+    /* background-color: #f8f9fa; Set the background color of the footer */
+    padding: 40px 0;
+    /* Add padding to the footer */
+}
+
+.footer-custom {
+    /* color: blue; Set text color */
+}
+
+.footer-custom .logo img {
+    padding-left: 20px;
+    /* Add padding to the right of the logo */
+}
+
+.footer-custom .exit-button button {
+    padding-right: 10px;
+    /* Add padding to the left of the button */
+    width: 10rem;
+    /* Set the width of the button */
+}
+
+.arcada-text-logo {
+    width: 150px;
+}
+
+.circular-logo {
+    width: 10rem;
+    height: 10rem;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.custom-bg {
+    background-color: #4084FF80 !important;
+}
+
+.custom-rounded {
+    border-radius: 10px !important;
+
+}
+
+.custom-img-size {
+    height: 100%;
+    margin: 1.5rem;
+    max-width: none;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+
+
+}
+
+.custom-techlabs-img {
+    padding-top: 12rem !important;
+}
+
+.custom-h1 {
+    color: rgba(0, 0, 0, .87);
+    font-family: Roboto, sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: .00938em;
+}
+
+.custom-h2 {
+    color: rgba(0, 0, 0, .87);
+    font-family: Roboto, sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: .00938em;
+    font-size: 2rem;
+    font-weight: 800;
+
+}
+
+.custom-text {
+    font-family: Open Sans, Tahoma, Arial, sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    color: rgba(0, 0, 0, 0.734);
+    font-size: 1rem;
+
+}
+
+@media (min-width: 992px) {
+    
+    /* .container {max-width: 100%;} */
+    .container-lg,
+    .container-md,
+    .container-sm {
+        /* max-width: 100%; */
+    }
+
+    
+}
+
+
+
+/* @media (min-width: 1400px) {
+        .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+            max-width: 100% !important; 
+        }
+      } */
+
+
+.bg-primary {
+    background-color: #004dbe !important;
+}
+
+.custom-logo {
+    position: relative;
+    width: 104px !important;
+    height: 55.2px !important;
+
+
+    margin-left: 24px !important;
+    margin-top: 22px !important;
+    /* margin-top: 1.4rem  !important; */
+    /* padding: 0!important; */
+    top: 0px !important;
+    left: -12px !important;
+}
+
+.navbar {
+    padding: 0 !important;
+}
+
+.language-button {
+    display: inline-flex;
+    -moz-box-align: center;
+    align-items: center;
+    -moz-box-pack: center;
+    justify-content: center;
+    position: relative;
+    box-sizing: border-box;
+    background-color: transparent;
+    outline: 0px;
+    border: 0px;
+    margin: 0px;
+    cursor: pointer;
+    user-select: none;
+    vertical-align: middle;
+    appearance: none;
+    text-decoration: none;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 500;
+    font-size: 0.9375rem;
+    line-height: 1.75;
+    letter-spacing: 0.02857em;
+    text-transform: uppercase;
+    min-width: 64px;
+    padding: 8px 11px;
+    border-radius: 4px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    color: rgb(255, 255, 255);
+
+}
+
+.language-button:hover {
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.04)
+}
+
+
+
+.custom-container {
+    padding: 26px !important;
+    max-width: 1400px;
+    padding-bottom: 160px !important;
+}
+
+.custom-footer-bottom{
+    position: relative;
+    top: 60px !important;
+    left: -24px !important;
+/* padding-top: 90px; */
+}
+.custom-container-tl{
+    
+    width: 99% !important;
+    padding-bottom: 160px !important;
+}
+.custom-footer{
+padding-top: 5% !important;
+padding-bottom: 2% !important;
+}
+
+
+.footer {
+    /* background-color: #6d0a0a; */
+    /* background-color: #004dbe !important; */
+    color: white !important;
+    text-align: center !important;
+    padding: 20px !important;
+    position: fixed !important;
+    bottom: 0 !important;
+    width: 100% !important;
+}
+
+.lag-bottons{
+    position: fixed !important;
+    top: 0 !important;
+}
+
+/* Responsive Padding */
+@media (max-width: 768px) {
+    .footer {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    .footer {
+        padding: 10px;
+    }
+}
