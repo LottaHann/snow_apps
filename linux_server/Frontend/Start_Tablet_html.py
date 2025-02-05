@@ -1,6 +1,9 @@
 import http.server
 import socketserver
 import os
+import websockets
+import asyncio
+import threading
 # Set the port number you want to use
 port = 5500
 # Set the path to the directory you want to serve

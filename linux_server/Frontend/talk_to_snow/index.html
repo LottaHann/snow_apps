@@ -106,8 +106,11 @@
 
     <script>
         async function sendAPICall(status) {
+            console.log(`Sending API call with status '${status}'...`);
             try {
                 const response = await fetch(`http://localhost:5100/api/post?call=${status}`);
+                console.log("Response from API call:", response);
+                console.log("Response ok:", response.ok);
                 if (!response.ok) {
                     console.log("Something went wrong with the API call.");
                     return;

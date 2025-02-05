@@ -1,7 +1,12 @@
 requests
 flask_cors
 flask
+flask-sockerio
 SpeechRecognition
 pyttsx3
 spacy
 nltk
+websockets
+asyncio
+openai-whisper
+soundfile
