@@ -3,7 +3,7 @@ from flask_cors import CORS
 from flask import Flask, Response, render_template, request,  jsonify
 import requests,os
 import socket
-from RunListenToVoice import listen_to_voice, get_askRobot, stopCall
+from RunListenToVoice import listen_to_voice, get_answer, stopCall
 # from chatboot.new_test_spacy_bot import get_response
 
 # Hämta nuvarande arbetskatalog
@@ -24,7 +24,7 @@ def send_face_data(data,post_name):
 
 def text_to_speech(data):
     try:
-        get_askRobot(data)
+        get_answer(data)
     except:
         return None
     
@@ -58,11 +58,15 @@ def frontpage():
 
 @app.route("/api/post", methods=["GET"])
 def api_parse_sentence():
+    print("request.args",request.args)
     face_data = request.args.get("face")
     touch_data = request.args.get("touch")
     call_data = request.args.get("call")
+    print("call_data",call_data)
     textToSpeech_data= request.args.get("text")
     
+    print("received post request...")
+
     if face_data:
         queue.put(face_data)
         send_face_data(face_data,"face")

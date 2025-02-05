@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talk to Snow</title>
+    <link rel="icon" href="../../img/logo_png.png" type="image/x-icon">
+    <!-- Bootstrap 5 CSS -->
+    <link href="../bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../robot.css">
+    <!-- ../../img/arcada_blac_text.png -->
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light navbar-custom">
+
+        <div class="container lag-bottons" style="  max-width: 100% !important;">
+            <!-- Navbar brand with logo and text -->
+            <a href="../">
+                <img class="custom-logo " src="../img/nedladdning.svg" alt="Logo">
+            </a>
+
+
+            <!-- Two separate div elements for positioning the content -->
+            <div class="d-flex flex-row ">
+                <div class="p-2  video-container">
+                </div>
+
+                <!-- Navbar toggle button for small screens -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+
+                <div class="p-2 ml-auto">
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link text-white language-button fw-bold" href="#SV"></a>
+                                <!-- <button class="btn btn-danger"  style="width: 10rem;">Exit</button> -->
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white language-button" href="#FI"></a>
+                                <!-- <button class="btn btn-danger"  style="width: 10rem;">Exit</button> -->
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white language-button " href="#EN">EN</a>
+                                <!-- <button class="btn btn-danger"  style="width: 10rem;">Exit</button> -->
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+        </div>
+    </nav>
+
+    <!-- Main content -->
+    <!-- template info html  -->
+
+    <div class="container mt-5">
+        <h1 class="text-center">Talk to Snow</h1>
+        <div class="d-flex justify-content-center mt-4">
+            <button class="btn btn-success mx-2" onclick="sendAPICall('on')">On</button>
+            <button class="btn btn-danger mx-2" onclick="sendAPICall('off')">Off</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="  footer  ">
+        <div class="container-fluid d-flex justify-content-between align-items-center footer-custom">
+            <div class="logo  ">
+                <!-- <img src="../../img/nedladdning.svg" alt="Logo" width="100" height="100"> -->
+            </div>
+       
+            <div class="exit-button clickable-image-Exit">
+                <a href="../" class="btn btn btn-dark" onclick="sendAPICallOff()" id="stopBtn" style="width: 10rem;">Exit</a>
+
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="../bootstrap.bundle.min.js"></script>
+    <script>
+
+    </script>
+
+
+    <script src="../robot.js"></script>
+    <script src="../statistik.js"></script>
+
+    <script>
+        async function sendAPICall(status) {
+            try {
+                const response = await fetch(`http://localhost:5100/api/post?call=${status}`);
+                if (!response.ok) {
+                    console.log("Something went wrong with the API call.");
+                    return;
+                }
+                console.log(`API call with status '${status}' was successful.`);
+            } catch (error) {
+                console.error("An error occurred during the API call:", error);
+            }
+        }
+    </script>
+
+</body>
+
+</html>

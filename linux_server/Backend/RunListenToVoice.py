@@ -1,7 +1,7 @@
 import sys
 import speech_recognition as sr
 from TextToSpeechEngineScript import TextToSpeechEngine, Thread
-from spacy_nltk_treings_modol.get_ask import get_ask
+from nltk_model.get_ask import make_ask_response, hotword_detection
 
 # Lägg till sökvägen till din Flask-applikation
 sys.path.append('D:/2024/Arcada robot/ArcadaRobot/Linux/Flask')
@@ -26,11 +26,13 @@ def text_exit_match(userInput):
     return False
 
 # Funktion för att hämta svar från chatbotten
-def get_askRobot(input):
+def get_answer(input):
     if text_exit_match(input):
+        hotword_detection(input)
         return input
 
-    response = get_ask(input)  # Anropa get_ask-funktionen
+    response = make_ask_response(input)  # Anropa get_ask-funktionen
+    hotword_detection(input)
     print(response)
     Thread(tts_engine.speak(response, "Female"))  # Säg svaret med TTS
     return response
@@ -54,6 +56,7 @@ def listen_to_voice():
             audio = recognizer.listen(source)
         
         try:
+            print("Processing audio...")
             text = recognizer.recognize_google(audio)
             print("You said:", text)
 
@@ -63,7 +66,7 @@ def listen_to_voice():
                 stopCall()
                 break
             
-            get_askRobot(text)
+            get_answer(text)
         
         except sr.UnknownValueError:
 
@@ -85,5 +88,5 @@ def listen_to_voice():
 # Om du vill testa funktionen direkt
 # Testa med en direktfråga
 if __name__ == "__main__":
-    get_askRobot("Arcada")
+    get_answer("Arcada")
 

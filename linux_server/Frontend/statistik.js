@@ -45,13 +45,13 @@ function formatTime(ms) {
 function getPageNumber() {
   const path = window.location.pathname;
   switch (path) {
-      case '/contact/':
+      case '/talk_to_snow/':
           return "Talk app";
-      case '/info/':
+      case '/text_with_snow/':
           return "Text app";
-      case '/arcada/':
+      case '/face_expressions/':
           return "Swaps Face app";
-      case '/techlabs/':
+      case '/statistics/':
           return "Statistics app";
       default:
           return 0; // Om sidan inte är igenkänd

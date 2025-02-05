@@ -1,0 +1,7 @@
+requests
+flask_cors
+flask
+SpeechRecognition
+pyttsx3
+spacy
+nltk

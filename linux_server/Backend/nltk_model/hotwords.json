@@ -1,0 +1,26 @@
+{
+    "hotwords":
+    [
+        {
+            "tag": "happy",
+            "patterns": ["happy", "good", "great", "awesome", "fantastic", "amazing", "wonderful", "excellent", "superb", "nice", "cool", "joyful", "joy", "joyous", "delightful", "delight", "pleasure", "pleasurable", "enjoyable", "enjoy", "enjoyment", "satisfied", "satisfy", "satisfying", "satisfaction", "thanks", "thankyou", "helpful"],
+            "hotword": "smile"
+        },
+        {
+            "tag": "sad",
+            "patterns": ["sad", "bad", "terrible", "horrible", "awful", "unhappy", "unpleasant", "unpleasure", "unjoyful", "unjoy", "unsatisfied", "unsatisfy", "unsatisfying", "unsatisfaction", "sorry", "apology", "apologize", "regret", "regretful", "regrettable", "regretted", "regretting", "regretful", "not helpful"],
+            "hotword": "sad"
+        },
+        {
+            "tag": "angry",
+            "patterns": ["angry", "mad", "annoyed", "annoying", "irritated", "irritating", "frustrated", "frustrating", "disappointed", "disappointing", "disappointment", "disappoint", "displeased"],
+            "hotword": "angry"
+        },
+        {
+            "tag": "blushing",
+            "patterns": ["cute", "lovely", "adorable", "sweet", "charming", "charmed", "best", "nicest"],
+            "hotword": "blushing"
+        }
+
+    ]
+}

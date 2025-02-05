@@ -107,52 +107,7 @@ function button (){
         container.innerHTML = person1HTML ;
     }
 
-
-
-function contact(){
-    fetch('../template/contact/people.html')
-    .then(response => response.text())
-    .then(html => {
-        // Once the HTML is fetched, insert it into a DOM element
-        // const container = document.getElementById('contact-people');
-        const container = document.getElementById('main-contact');
-        container.innerHTML = html;
-    })
-    .catch(error => {
-        console.error('Error fetching HTML:', error);
-    });
-}
-
-
-
-function arcada(){
-  
-    fetch('../template/arcada/arcada.html')
-    .then(response => response.text())
-    .then(html => {
-        // Once the HTML is fetched, insert it into a DOM element
-        const container = document.getElementById('content-arcada');
-        container.innerHTML = html;
-    })
-    .catch(error => {
-        console.error('Error fetching HTML:', error);
-    });
-}
-
-function info(){
-  
-    fetch('../template/info/info.html')
-    .then(response => response.text())
-    .then(html => {
-        // Once the HTML is fetched, insert it into a DOM element
-        const container = document.getElementById('content-info');
-        container.innerHTML = html;
-    })
-    .catch(error => {
-        console.error('Error fetching HTML:', error);
-    });
-}
-
+//for testing:
 async function SendFaceName(int){
     //  url exemple = http://127.0.0.1:4000/face?name=smile
     
@@ -176,7 +131,7 @@ async function SendFaceName(int){
     const data = await response.text();
     if (data === "OK") {
         console.log("SUCCESS");
-        console.log("sendt face name : "+faces[int]);
+        console.log("sent face name : "+faces[int]);
     }
 }
 
@@ -188,7 +143,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (clickableDiv) {
         clickableDiv.addEventListener('click', function() {
             // Redirect to the desired URL
-            window.location.href = './contact';
+            window.location.href = './talk_to_snow';
         });
     }
 });
@@ -199,7 +154,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (clickableDiv) {
         clickableDiv.addEventListener('click', function() {
             // Redirect to the desired URL
-            window.location.href = './info';
+            window.location.href = './text_with_snow';
         });
     }
 });
@@ -210,7 +165,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (clickableDiv) {
         clickableDiv.addEventListener('click', function() {
             // Redirect to the desired URL
-            window.location.href = './arcada';
+            window.location.href = './face_expressions';
         });
     }
 });
@@ -221,7 +176,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (clickableDiv) {
         clickableDiv.addEventListener('click', function() {
             // Redirect to the desired URL
-            window.location.href = './techlabs';
+            window.location.href = './statistics';
         });
     }
 });

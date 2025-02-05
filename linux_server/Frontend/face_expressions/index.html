@@ -4,15 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TecLabs</title>
+    <title>Snow</title>
     <link rel="icon" href="../../img/logo_png.png" type="image/x-icon">
     <!-- Bootstrap 5 CSS -->
     <link href="../bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <link rel="stylesheet" href="../robot.css">
-    <!-- ../../img/arcada_blac_text.png -->
-
     <style>
         .container_Swaps_face {
             text-align: center;
@@ -129,6 +127,7 @@
             background-color: #f0f0f0;
         }
     </style>
+    <!-- ../../img/arcada_blac_text.png -->
 </head>
 
 <body>
@@ -206,21 +205,26 @@
                             <!-- <h1>Yrkeshögskolan Arcada</h1> -->
                             <h2 class="css-kj9vo7 custom-h2">Snow</h2>
                             <p class="custom-text" style="padding-bottom: 50px;">
-                                Here you can talk to the robot with a microphone!
+                                Here you can use swaps face to change the robot's face and send to the robot's face
                             </p>
-                
-                            <!-- <div class="container_Swaps_face">
-         
+
+
+                        </div>
+
+                        <div class="col-md-6 text-right  custom-techlabs-img ">
+                            <!-- here is Swaps Face -->
+                            <div class="container_Swaps_face">
+
                                 <div class="top-text">Swaps Face</div>
                                 <p>Click on an available expression:</p>
                                 <div class="expression-list">
                                     <div class="expression-item" onclick="setExpression('smile')">smile</div>
                                     <div class="expression-item" onclick="setExpression('neutral')">neutral</div>
                                     <div class="expression-item" onclick="setExpression('sad')">sad</div>
-                                    <div class="expression-item" onclick="setExpression('hearth')">hearth</div>
+                                    <div class="expression-item" onclick="setExpression('blushing')">blushing</div>
                                     <div class="expression-item" onclick="setExpression('wink')">wink</div>
                                     <div class="expression-item" onclick="setExpression('angry')">angry</div>
-                                    <div class="expression-item" onclick="setExpression('smile3')">smile3</div>
+                                    <div class="expression-item" onclick="setExpression('kissyface')">kissyface</div>
                                     <div class="expression-item" onclick="setExpression('bigsmile')">bigsmile</div>
                                     <div class="expression-item" onclick="setExpression('surprise')">surprise</div>
                                 </div>
@@ -231,6 +235,7 @@
                                 </form>
 
                                 <script>
+                     
                                     const faceInput = document.getElementById("get-face");
                                     function setExpression(expression) {
                                         faceInput.value = expression;
@@ -244,9 +249,11 @@
                                                 console.log("No input set");
                                                 return;
                                             }
-
+                                            
+                                            console.log("Sending request with face:", faceInput.value);
                                             // const response = await fetch(`http://{{ip}}/api/post?touch=${faceInput.value}`);
                                             const response = await fetch(`http://localhost:5000/api/post?face=${faceInput.value}`);
+                                    
                                             if (!response.ok) {
                                                 console.log("Something went wrong.");
                                                 return;
@@ -259,89 +266,14 @@
                                     }
 
                                 </script>
-                            </div> -->
-                        </div>
-<!-- Talkings app start here -->
-                        <div class="col-md-6 text-right  custom-techlabs-img ">
-                            <div class="container_Swaps_face">
-                                <div class="top-text">Talk</div>
-                                <p>Click to control the microphone:</p>
-                                <div class="expression-list">
-                                    <div class="expression-item" onclick="setCamera('on')">On</div>
-                                    <div class="expression-item" onclick="setCamera('off')">Off</div>
-                                </div>
-                                <form id="input-form-camera" class="input-container">
-                                    <input class="selectedInput" type="text" id="camera-input" name="cameraInput"
-                                        placeholder="Selected Expression" readonly>
-                                    <button class="submit-button"  id="btn-request-camera" type="submit">Start Talking </button>
-                                </form>
-
-                                <script>
-                                            const cameraInput = document.getElementById("camera-input");
-        function setCamera(Input) {
-            cameraInput.value = Input;
-            console.log("cameraInput: " + cameraInput.value);
-        }
-        const inputFormCamera = document.getElementById("input-form-camera");
-        if (inputFormCamera) {
-            console.log("cameraInput: " + cameraInput.value);
-            inputFormCamera.addEventListener("submit", async (ev) => {
-                ev.preventDefault();
-
-                if (!cameraInput) {
-                    console.log("No input set");
-                    return;
-                }
-
-                const response = await fetch(`http://localhost:5100/api/post?call=${cameraInput.value}`);
-                if (!response.ok) {
-                    console.log("Something went wrong.");
-                    return;
-                }
-
-                const data = await response.text();
-                if (data === "OK") {
-                    console.log("SUCCESS");
-                }
-            });
-        }
-                                </script>
                             </div>
-
-                                
                         </div>
-
                     </div>
                 </div>
-
-
             </div>
-
         </div>
-
-
-
-
-
     </div>
-<script>
 
-async function sendAPICallOff() {
-    try {
-        // Skicka en GET-förfrågan till API med "off" som parameter
-        const response = await fetch(`http://localhost:5100/api/post?call=off`);
-        
-        // Kontrollera om svaret är OK (statuskod 200–299)
-        if (!response.ok) {
-            console.log("Something went wrong with the API call.");
-            return;
-        }
-    }
-    catch(error){
-        console.error("An error occurred during the API call:", error);
-    }
-    };
-</script>
 
     <!-- Footer -->
     <footer class="  footer  ">
@@ -349,9 +281,8 @@ async function sendAPICallOff() {
             <div class="logo  ">
                 <!-- <img src="../../img/nedladdning.svg" alt="Logo" width="100" height="100"> -->
             </div>
-       
             <div class="exit-button clickable-image-Exit">
-                <a href="../" class="btn btn btn-dark" onclick="sendAPICallOff()" id="stopBtn" style="width: 10rem;">Exit</a>
+                <a href="../" class="btn btn btn-dark" id="stopBtn" style="width: 10rem;">Exit</a>
 
             </div>
         </div>

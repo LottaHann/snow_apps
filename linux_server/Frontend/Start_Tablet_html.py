@@ -4,8 +4,9 @@ import os
 # Set the port number you want to use
 port = 5500
 # Set the path to the directory you want to serve
-directory = r"D:/2024/tesis robot app/Tesis Robot/Linux/Tablet"
-# Change to the specified directory
+
+directory = os.getcwd()
+
 try:
     os.chdir(directory)
 except FileNotFoundError:
