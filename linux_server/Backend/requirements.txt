@@ -11,3 +11,4 @@ asyncio
 openai-whisper
 soundfile
 transformers
+pyaudio

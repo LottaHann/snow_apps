@@ -77,7 +77,7 @@ def hotword_detection(user_input):
         #make http request to expression server
         hotword = best_match["hotword"]
         print(f"Hotword detected: {hotword}")
-        response = requests.post(f'http://localhost:5000/api/post?face={hotword}')
+        response = requests.get(f'http://localhost:5000/update_expression?name={hotword}')
         print(response)
     else:
         print("No hotword detected")

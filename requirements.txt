@@ -13,3 +13,5 @@ openai-whisper
 soundfile
 torch
 transformers
+pyaudio
+openai

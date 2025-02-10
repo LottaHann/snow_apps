@@ -4,5 +4,6 @@ The backend and frontend code that runs on the Linux machine in the Snow robot. 
 2. Install requirements.txt
 3. Install spacy mode:
 python3 -m spacy download en_core_web_sm
+4. sudo apt-get install portaudio19-dev
 
 
