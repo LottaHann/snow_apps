@@ -252,7 +252,7 @@
                                             
                                             console.log("Sending request with face:", faceInput.value);
                                             // const response = await fetch(`http://{{ip}}/api/post?touch=${faceInput.value}`);
-                                            const response = await fetch(`http://localhost:5000/api/post?face=${faceInput.value}`);
+                                            const response = await fetch(`http://localhost:5000/update_expression?name=${faceInput.value}`);
                                     
                                             if (!response.ok) {
                                                 console.log("Something went wrong.");

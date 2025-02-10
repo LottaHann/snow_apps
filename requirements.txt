@@ -5,9 +5,11 @@ flask-socketio
 SpeechRecognition
 pyttsx3
 spacy
+torch
 nltk
 websockets
 asyncio
 openai-whisper
 soundfile
+torch
 transformers
