@@ -1,7 +1,9 @@
 import sys
-import speech_recognition as sr
 from TextToSpeechEngineScript import TextToSpeechEngine, Thread
 from nltk_model.get_ask import make_ask_response, hotword_detection
+import speech_recognition as sr
+import os
+
 
 # Lägg till sökvägen till din Flask-applikation
 sys.path.append('D:/2024/Arcada robot/ArcadaRobot/Linux/Flask')
@@ -9,6 +11,8 @@ sys.path.append('D:/2024/Arcada robot/ArcadaRobot/Linux/Flask')
 tts_engine = TextToSpeechEngine()
 # Global variabel för att styra programflödet
 callIsOpen = True
+
+recognizer = sr.Recognizer()
 
 # Funktion för att dela upp ord från en given text
 def splitWords(textinput):
@@ -46,19 +50,41 @@ def stopCall():
 def listen_to_voice():
     global callIsOpen
     callIsOpen = True
-
-    recognizer = sr.Recognizer()
     error_list = []
+
 
     while callIsOpen:
         print("Listening...")
+        
         with sr.Microphone() as source:
             audio = recognizer.listen(source)
         
+        
+        """
+        # check if test.wav file can be found:
+        if not os.path.exists("test.wav"):
+            print("test.wav file not found")
+            stopCall()
+            break
+        else:
+            print("wav file found")
+
+        with sr.WavFile("test.wav") as source:              # use "test.wav" as the audio source
+            audio = recognizer.record(source) 
+            print("recorded wav file")   
+        """          
+        
         try:
             print("Processing audio...")
-            text = recognizer.recognize_google(audio)
+            text = recognizer.recognize_faster_whisper(audio, language="en")
             print("You said:", text)
+
+            if text == "":
+                t = "Sorry, I could not understand audio."
+                Thread(tts_engine.speak(t, "Female"))
+                print(t)
+                stopCall()
+                break
 
             if text_exit_match(text):
                 t = "Thank you for using our robot app. The application is now exiting."
@@ -82,6 +108,11 @@ def listen_to_voice():
             t = "Could not request results from the Speech Recognition service."
             Thread(tts_engine.speak(t, "Female"))
             print(t)
+            stopCall()
+            break
+
+        except Exception as e:
+            print("Error:", e)
             stopCall()
             break
 

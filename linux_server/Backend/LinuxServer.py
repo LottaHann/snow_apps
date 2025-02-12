@@ -4,6 +4,7 @@ from flask import Flask, Response, render_template, request,  jsonify
 import requests,os
 import socket
 from RunListenToVoice import listen_to_voice, get_answer, stopCall
+
 # from chatboot.new_test_spacy_bot import get_response
 
 # Hämta nuvarande arbetskatalog

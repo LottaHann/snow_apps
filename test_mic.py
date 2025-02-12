@@ -12,7 +12,7 @@ def test_mic():
     with sr.Microphone() as source:
         print("Say something!")
         audio = r.listen(source)
-
+    """
     # recognize speech using Sphinx
     try:
         print("Sphinx thinks you said " + r.recognize_sphinx(audio))
@@ -20,7 +20,7 @@ def test_mic():
         print("Sphinx could not understand audio")
     except sr.RequestError as e:
         print("Sphinx error; {0}".format(e))
-
+    """
     # recognize speech using Google Speech Recognition
     try:
         # for testing purposes, we're just using the default API key
@@ -32,6 +32,7 @@ def test_mic():
     except sr.RequestError as e:
         print("Could not request results from Google Speech Recognition service; {0}".format(e))
 
+    """
     # recognize speech using Google Cloud Speech
     # Before run, create local authentication credentials (``gcloud auth application-default login``)
     try:
@@ -68,7 +69,7 @@ def test_mic():
     except sr.RequestError as e:
         print("Could not request results from Microsoft Azure Speech service; {0}".format(e))
 
-    """
+    
     # recognize speech using Houndify
     HOUNDIFY_CLIENT_ID = "INSERT HOUNDIFY CLIENT ID HERE"  # Houndify client IDs are Base64-encoded strings
     HOUNDIFY_CLIENT_KEY = "INSERT HOUNDIFY CLIENT KEY HERE"  # Houndify client keys are Base64-encoded strings
@@ -98,7 +99,7 @@ def test_mic():
         print("Whisper could not understand audio")
     except sr.RequestError as e:
         print(f"Could not request results from Whisper; {e}")
-
+    """
     # recognize speech using Whisper API
     OPENAI_API_KEY = "INSERT OPENAI API KEY HERE"
     os.environ["OPENAI_API_KEY"] = OPENAI_API_KEY
@@ -107,7 +108,7 @@ def test_mic():
     except sr.RequestError as e:
         print(f"Could not request results from OpenAI Whisper API; {e}")
 
-
+    """
 
 if __name__ == "__main__":
     test_mic()
