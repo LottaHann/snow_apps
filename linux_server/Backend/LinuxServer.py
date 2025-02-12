@@ -33,12 +33,14 @@ def runCalling(input):
     print(input)
     if input == "off":
         stopCall()
-        print(input)
+        print("stopped call")
         return None
-    try:
-        listen_to_voice()
-    except:
-        return input
+    else: 
+        try:
+            print("calling listen_to_voice")
+            listen_to_voice()
+        except:
+            return input
 
 # app = Flask(__name__)
 app = Flask(__name__)
@@ -63,7 +65,6 @@ def api_parse_sentence():
     face_data = request.args.get("face")
     touch_data = request.args.get("touch")
     call_data = request.args.get("call")
-    print("call_data",call_data)
     textToSpeech_data= request.args.get("text")
     
     print("received post request...")
