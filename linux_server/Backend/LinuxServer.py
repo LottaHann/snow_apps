@@ -10,6 +10,9 @@ from RunListenToVoice import listen_to_voice, get_answer, stopCall
 # Hämta nuvarande arbetskatalog
 current_directory = os.getcwd()
 script_directory = os.path.dirname(os.path.abspath(__file__))
+rpi_ip = "193.166.180.12"
+expression_server = f'http://{rpi_ip}:5000'
+
 
 def send_face_data(data,post_name):
     expression_ip = request.environ.get("REMOTE_ADDR")

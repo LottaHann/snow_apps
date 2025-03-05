@@ -5,6 +5,9 @@ from nltk.metrics import jaccard_distance
 import random
 import requests
 from chat import get_response
+rpi_ip = "193.166.180.103"
+expression_server = f'http://{rpi_ip}:5000'
+update_expression_endpoint = f'{expression_server}/update_expression'
 
 # Ladda spaCy-modellen
 nlp = spacy.load("en_core_web_sm")
@@ -77,7 +80,7 @@ def hotword_detection(user_input):
         #make http request to expression server
         hotword = best_match["hotword"]
         print(f"Hotword detected: {hotword}")
-        response = requests.get(f'http://localhost:5000/update_expression?name={hotword}')
+        response = requests.get(f'{update_expression_endpoint}?name={hotword}')
         print(response)
     else:
         print("No hotword detected")
