@@ -46,7 +46,7 @@ def runCalling(input):
             return input
 
 # app = Flask(__name__)
-app = Flask(__name__, template_folder="../Frontend", static_folder="../Frontend")
+app = Flask(__name__, template_folder="../Frontend", static_folder="../Frontend/static")
 #app = Flask(__name__)
 app.debug = False
 CORS(app)
@@ -62,6 +62,22 @@ def frontpage():
     # HTTP_HOST=  192.168.32.6:5100
     
     return render_template("index.html", expression_ip=test, ip=ip)
+
+@app.route("/talk_to_snow")
+def talk_to_snow():
+    return render_template("talk_to_snow/index.html")
+
+@app.route("/text_to_snow")
+def text_to_snow():
+    return render_template("text_to_snow/index.html")
+
+@app.route("/face_expressions")
+def face_expressions():
+    return render_template("face_expressions/index.html")
+
+@app.route("/statistics")
+def statistics():
+    return render_template("statistics/index.html")
 
 @app.route("/api/post", methods=["GET"])
 def api_parse_sentence():

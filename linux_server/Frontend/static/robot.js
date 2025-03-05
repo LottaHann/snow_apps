@@ -154,7 +154,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (clickableDiv) {
         clickableDiv.addEventListener('click', function() {
             // Redirect to the desired URL
-            window.location.href = './text_with_snow';
+            window.location.href = '../text_with_snow';
         });
     }
 });

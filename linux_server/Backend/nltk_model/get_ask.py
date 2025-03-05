@@ -5,7 +5,7 @@ from nltk.metrics import jaccard_distance
 import random
 import requests
 from chat import get_response
-rpi_ip = "193.166.180.103"
+rpi_ip = "193.166.180.12"
 expression_server = f'http://{rpi_ip}:5000'
 update_expression_endpoint = f'{expression_server}/update_expression'
 
