@@ -46,7 +46,8 @@ def runCalling(input):
             return input
 
 # app = Flask(__name__)
-app = Flask(__name__)
+app = Flask(__name__, template_folder="../Frontend", static_folder="../Frontend")
+#app = Flask(__name__)
 app.debug = False
 CORS(app)
 queue = Queue()
