@@ -4,6 +4,7 @@ from nltk_model.get_ask import make_ask_response, hotword_detection
 import speech_recognition as sr
 import os
 import time
+from datetime import datetime
 
 
 # Lägg till sökvägen till din Flask-applikation
@@ -17,6 +18,14 @@ stop_listening = None
 
 r = sr.Recognizer()
 m = sr.Microphone()
+
+def log_answer_play(answer_time):
+    with open("response_times.log", "a") as log_file:
+        log_file.write(f"Answer played: {answer_time} ")
+
+def log_call_ended(end_time):
+    with open("response_times.log", "a") as log_file:
+        log_file.write(f"Call ended: {end_time}\n")
 
 # Funktion för att dela upp ord från en given text
 def splitWords(textinput):
@@ -42,7 +51,9 @@ def get_answer(input):
     response = make_ask_response(input)  # Anropa get_ask-funktionen
     hotword_detection(input)
     print(response)
+    log_answer_play(datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
     Thread(tts_engine.speak(response, "Female"))  # Säg svaret med TTS
+    log_call_ended(datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
     return response
 
 # Funktion för att stoppa samtalet

@@ -4,6 +4,8 @@ from flask import Flask, Response, render_template, request,  jsonify
 import requests,os
 import socket
 from RunListenToVoice import listen_to_voice, get_answer, stopCall
+import time 
+from datetime import datetime  
 
 # from chatboot.new_test_spacy_bot import get_response
 
@@ -13,7 +15,45 @@ script_directory = os.path.dirname(os.path.abspath(__file__))
 rpi_ip = "193.166.180.12"
 expression_server = f'http://{rpi_ip}:5000'
 
+def log_question_received(question_time):
+    with open("response_times.log", "a") as log_file:
+        log_file.write(f"Question received: {question_time} ")
 
+
+def calculate_response_time(question_time, answer_time, end_time):
+    question_dt = datetime.strptime(question_time, "%Y-%m-%d %H:%M:%S")
+    answer_dt = datetime.strptime(answer_time, "%Y-%m-%d %H:%M:%S")
+    end_dt = datetime.strptime(end_time, "%Y-%m-%d %H:%M:%S")
+    
+    response_time = (answer_dt - question_dt).total_seconds()
+    total_time = (end_dt - question_dt).total_seconds()
+    
+    return response_time, total_time
+
+def update_log_with_response_time():
+    with open("response_times.log", "r") as log_file:
+        lines = log_file.readlines()
+
+    updated_lines = []
+    for i in range(0, len(lines), 3):
+        question_line = lines[i].strip()
+        answer_line = lines[i+1].strip()
+        end_line = lines[i+2].strip()
+
+        question_time = question_line.split(": ", 1)[1]
+        answer_time = answer_line.split(": ", 1)[1]
+        end_time = end_line.split(": ", 1)[1]
+
+        response_time, total_time = calculate_response_time(question_time, answer_time, end_time)
+
+        updated_lines.append(f"{question_line} | Response time: {response_time} seconds\n")
+        updated_lines.append(f"{answer_line}\n")
+        updated_lines.append(f"{end_line} | Total time: {total_time} seconds\n")
+
+    with open("response_times.log", "w") as log_file:
+        log_file.writelines(updated_lines)
+
+    
 def send_face_data(data,post_name):
     expression_ip = request.environ.get("REMOTE_ADDR")
     try:
@@ -35,6 +75,7 @@ def text_to_speech(data):
 def runCalling(input):
     print(input)
     if input == "off":
+        log_question_received(datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
         stopCall()
         print("stopped call")
         return None
@@ -49,7 +90,7 @@ def runCalling(input):
 app = Flask(__name__, template_folder="../Frontend", static_folder="../Frontend/static")
 #app = Flask(__name__)
 app.debug = False
-CORS(app)
+CORS(app, resources={r"/*": {"origins": expression_server}})
 queue = Queue()
 
 @app.route("/")
@@ -69,7 +110,7 @@ def talk_to_snow():
 
 @app.route("/text_to_snow")
 def text_to_snow():
-    return render_template("text_to_snow/index.html")
+    return render_template("text_with_snow/index.html")
 
 @app.route("/face_expressions")
 def face_expressions():
@@ -103,9 +144,9 @@ def api_parse_sentence():
         runCalling(call_data)
         return "call ok"
     elif textToSpeech_data:
+        log_question_received(datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
         queue.put(textToSpeech_data)
         text_to_speech(textToSpeech_data)
-      
         return "TTS OK"
     else:
         return "Invalid request"
