@@ -19,13 +19,17 @@ stop_listening = None
 r = sr.Recognizer()
 m = sr.Microphone()
 
+def log_started_listening(time):
+    with open("response_times.log", "a") as log_file:
+        log_file.write(f"Started listening: {time}, ")
+
 def log_answer_play(answer_time):
     with open("response_times.log", "a") as log_file:
-        log_file.write(f"Answer played: {answer_time} ")
+        log_file.write(f"Answer played: {answer_time}, ")
 
 def log_call_ended(end_time):
     with open("response_times.log", "a") as log_file:
-        log_file.write(f"Call ended: {end_time}\n")
+        log_file.write(f"Call ended: {end_time}")
 
 # Funktion för att dela upp ord från en given text
 def splitWords(textinput):
@@ -121,6 +125,8 @@ def listen_to_voice():
 
     with m as source:
         r.adjust_for_ambient_noise(source)
+    
+    log_started_listening(datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
 
     stop_listening = r.listen_in_background(m, callback)
 

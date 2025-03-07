@@ -1,10 +1,36 @@
-Question received: 2025-03-05 15:27:55 Question received: 2025-03-05 15:32:42 Question received: 2025-03-05 15:34:31 Answer played: 2025-03-05 15:34:58 Call ended: 2025-03-05 15:35:02
-Question received: 2025-03-05 15:41:25 Answer played: 2025-03-05 15:41:56 Call ended: 2025-03-05 15:42:00
-Question received: 2025-03-05 15:42:13 Answer played: 2025-03-05 15:42:43 Call ended: 2025-03-05 15:42:53
-Question received: 2025-03-05 15:43:08 Answer played: 2025-03-05 15:43:33 Call ended: 2025-03-05 15:43:52
-Answer played: 2025-03-05 15:49:14 Call ended: 2025-03-05 15:49:18
-Question received: 2025-03-05 15:53:14 Answer played: 2025-03-05 15:53:31 Call ended: 2025-03-05 15:53:35
-Question received: 2025-03-05 15:53:45 Answer played: 2025-03-05 15:54:00 Call ended: 2025-03-05 15:54:20
-Question received: 2025-03-05 15:54:20 Answer played: 2025-03-05 15:54:35 Call ended: 2025-03-05 15:54:54
-Question received: 2025-03-05 15:54:54 Answer played: 2025-03-05 15:55:11 Call ended: 2025-03-05 15:55:16
-Question received: 2025-03-05 15:55:16 Answer played: 2025-03-05 15:55:36 Call ended: 2025-03-05 15:55:41
+
+Type: speech, received status: on, at time: 2025-03-07 14:42:37, Started listening: 2025-03-07 14:42:39, received status: off, at time: 2025-03-07 14:42:42, Question received: 2025-03-07 14:42:42, Answer played: 2025-03-07 14:43:10, Call ended: 2025-03-07 14:43:13
+Type: speech, received status: on, at time: 2025-03-07 14:43:19, Started listening: 2025-03-07 14:43:21, received status: off, at time: 2025-03-07 14:43:26, Question received: 2025-03-07 14:43:26, Answer played: 2025-03-07 14:43:56, Call ended: 2025-03-07 14:44:15
+Type: speech, received status: on, at time: 2025-03-07 14:44:19, Started listening: 2025-03-07 14:44:20, received status: off, at time: 2025-03-07 14:44:24, Question received: 2025-03-07 14:44:24, Answer played: 2025-03-07 14:44:42, Call ended: 2025-03-07 14:44:52
+Type: speech, received status: on, at time: 2025-03-07 14:44:55, Started listening: 2025-03-07 14:44:57, received status: off, at time: 2025-03-07 14:45:01, Question received: 2025-03-07 14:45:01, Answer played: 2025-03-07 14:45:19, Call ended: 2025-03-07 14:45:24
+Type: speech, received status: on, at time: 2025-03-07 14:45:43, Started listening: 2025-03-07 14:45:45, received status: off, at time: 2025-03-07 14:45:51, Question received: 2025-03-07 14:45:51, 
+Type: speech, received status: on, at time: 2025-03-07 14:46:31, Started listening: 2025-03-07 14:46:33, received status: off, at time: 2025-03-07 14:46:35, Question received: 2025-03-07 14:46:35, 
+Type: speech, received status: on, at time: 2025-03-07 14:47:26, Started listening: 2025-03-07 14:47:27, received status: off, at time: 2025-03-07 14:47:30, Question received: 2025-03-07 14:47:30, Answer played: 2025-03-07 14:47:49, Call ended: 2025-03-07 14:48:02
+Type: speech, received status: on, at time: 2025-03-07 14:48:09, Started listening: 2025-03-07 14:48:10, received status: off, at time: 2025-03-07 14:48:15, Question received: 2025-03-07 14:48:15, Answer played: 2025-03-07 14:50:21, Call ended: 2025-03-07 14:50:29
+Type: speech, received status: on, at time: 2025-03-07 14:50:29, Started listening: 2025-03-07 14:50:30, received status: off, at time: 2025-03-07 14:50:30, Question received: 2025-03-07 14:50:30, 
+Type: speech, received status: on, at time: 2025-03-07 14:51:28, Started listening: 2025-03-07 14:51:29, received status: off, at time: 2025-03-07 14:51:34, Question received: 2025-03-07 14:51:34, Answer played: 2025-03-07 14:51:52, Call ended: 2025-03-07 14:51:53
+Type: text, Question received: 2025-03-07 14:52:34, Answer played: 2025-03-07 14:52:46, Call ended: 2025-03-07 14:52:50
+Type: text, Question received: 2025-03-07 14:52:55, Answer played: 2025-03-07 14:53:07, Call ended: 2025-03-07 14:53:16
+Type: text, Question received: 2025-03-07 14:53:21, Answer played: 2025-03-07 14:53:34, Call ended: 2025-03-07 14:53:53
+Type: text, Question received: 2025-03-07 14:53:55, Answer played: 2025-03-07 14:54:06, Call ended: 2025-03-07 14:54:19
+Type: text, Question received: 2025-03-07 14:54:21, Answer played: 2025-03-07 14:54:33, Call ended: 2025-03-07 14:54:38
+Type: text, Question received: 2025-03-07 14:54:49, Answer played: 2025-03-07 14:55:01, Call ended: 2025-03-07 14:55:11
+Type: text, Question received: 2025-03-07 14:55:23, Answer played: 2025-03-07 14:55:35, Call ended: 2025-03-07 14:55:44
+Type: text, Question received: 2025-03-07 14:55:47, Answer played: 2025-03-07 14:55:59, Call ended: 2025-03-07 14:56:15
+Type: text, Question received: 2025-03-07 14:56:41, Answer played: 2025-03-07 14:56:53, Call ended: 2025-03-07 14:57:03
+Type: text, Question received: 2025-03-07 14:57:08, Answer played: 2025-03-07 14:57:21, Call ended: 2025-03-07 14:57:35
+Type: text, Question received: 2025-03-07 14:57:35, Answer played: 2025-03-07 14:57:47, Call ended: 2025-03-07 14:57:59
+Type: text, Question received: 2025-03-07 14:58:05, Answer played: 2025-03-07 14:58:17, Call ended: 2025-03-07 14:58:27
+Type: text, Question received: 2025-03-07 14:58:33, Answer played: 2025-03-07 14:58:46, Call ended: 2025-03-07 14:59:02
+Type: text, Question received: 2025-03-07 14:59:08, Answer played: 2025-03-07 14:59:28, Call ended: 2025-03-07 14:59:43
+Type: text, Question received: 2025-03-07 14:59:58, Answer played: 2025-03-07 15:00:10, Call ended: 2025-03-07 15:00:24
+Type: text, Question received: 2025-03-07 15:00:50, Answer played: 2025-03-07 15:01:02, Call ended: 2025-03-07 15:01:17
+Type: text, Question received: 2025-03-07 15:01:29, Answer played: 2025-03-07 15:01:42, Call ended: 2025-03-07 15:01:55
+Type: text, Question received: 2025-03-07 15:02:23, Answer played: 2025-03-07 15:02:35, Call ended: 2025-03-07 15:02:51
+Type: text, Question received: 2025-03-07 15:03:05, Answer played: 2025-03-07 15:03:17, Call ended: 2025-03-07 15:03:32
+Type: text, Question received: 2025-03-07 15:03:53, Answer played: 2025-03-07 15:04:05, Call ended: 2025-03-07 15:04:21
+Type: text, Question received: 2025-03-07 15:04:31, Answer played: 2025-03-07 15:04:43, Call ended: 2025-03-07 15:04:46
+Type: text, Question received: 2025-03-07 15:05:04, Answer played: 2025-03-07 15:05:16, Call ended: 2025-03-07 15:05:25
+Type: text, Question received: 2025-03-07 15:05:44, Answer played: 2025-03-07 15:05:56, Call ended: 2025-03-07 15:06:06
+Type: text, Question received: 2025-03-07 15:06:17, Answer played: 2025-03-07 15:06:29, Call ended: 2025-03-07 15:06:40
+Type: text, Question received: 2025-03-07 15:06:54, Answer played: 2025-03-07 15:07:07, Call ended: 2025-03-07 15:07:10

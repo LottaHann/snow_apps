@@ -15,9 +15,19 @@ script_directory = os.path.dirname(os.path.abspath(__file__))
 rpi_ip = "193.166.180.12"
 expression_server = f'http://{rpi_ip}:5000'
 
+
+
+def log_status(status, time):
+    with open("response_times.log", "a") as log_file:
+        log_file.write(f"received status: {status}, at time: {time}, ")
+
+def log_type(question_type):
+    with open("response_times.log", "a") as log_file:
+        log_file.write(f"\nType: {question_type}, ")
+
 def log_question_received(question_time):
     with open("response_times.log", "a") as log_file:
-        log_file.write(f"Question received: {question_time} ")
+        log_file.write(f"Question received: {question_time}, ")
 
 
 def calculate_response_time(question_time, answer_time, end_time):
@@ -75,11 +85,14 @@ def text_to_speech(data):
 def runCalling(input):
     print(input)
     if input == "off":
+        log_status("off",datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
         log_question_received(datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
         stopCall()
         print("stopped call")
         return None
     else: 
+        log_type("speech")
+        log_status("on",datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
         try:
             print("calling listen_to_voice")
             listen_to_voice()
@@ -90,7 +103,7 @@ def runCalling(input):
 app = Flask(__name__, template_folder="../Frontend", static_folder="../Frontend/static")
 #app = Flask(__name__)
 app.debug = False
-CORS(app, resources={r"/*": {"origins": expression_server}})
+CORS(app, resources={r"/*": {"origins": [expression_server, "http://localhost:5100", "http://127.0.0.1:5100"]}})
 queue = Queue()
 
 @app.route("/")
@@ -144,6 +157,7 @@ def api_parse_sentence():
         runCalling(call_data)
         return "call ok"
     elif textToSpeech_data:
+        log_type("text")
         log_question_received(datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
         queue.put(textToSpeech_data)
         text_to_speech(textToSpeech_data)
