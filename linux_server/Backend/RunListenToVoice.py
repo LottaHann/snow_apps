@@ -19,24 +19,96 @@ stop_listening = None
 r = sr.Recognizer()
 m = sr.Microphone()
 
+def log_audio_recognized(time):
+    """
+    Log the time when audio is recognized.
+    
+    :param time: The time when audio is recognized.
+    """
+    with open("response_times.log", "a") as log_file:
+        log_file.write(f"Audio recognized: {time}, ")
+
+def log_stop_listening(time):
+    """
+    Log the time when stop_listening is called.
+    
+    :param time: The time when stop_listening is called.
+    """
+    with open("response_times.log", "a") as log_file:
+        log_file.write(f"stop_listening called at: {time}, ")
+
+def log_callback(time):
+    """
+    Log the time when the callback function is called.
+    
+    :param time: The time when the callback function is called.
+    """
+    with open("response_times.log", "a") as log_file:
+        log_file.write(f"Callback called at: {time}, ")
+
+def log_search_answer(time):
+    """
+    Log the time when searching for an answer.
+    
+    :param time: The time when searching for an answer.
+    """
+    with open("response_times.log", "a") as log_file:
+        log_file.write(f"Find answer: {time}, ")
+
+def log_answer_found(time):
+    """
+    Log the time when an answer is found.
+    
+    :param time: The time when an answer is found.
+    """
+    with open("response_times.log", "a") as log_file:
+        log_file.write(f"Answer found: {time}, ")
+
 def log_started_listening(time):
+    """
+    Log the time when the system starts listening.
+    
+    :param time: The time when the system starts listening.
+    """
     with open("response_times.log", "a") as log_file:
         log_file.write(f"Started listening: {time}, ")
 
 def log_answer_play(answer_time):
+    """
+    Log the time when the answer is played.
+    
+    :param answer_time: The time when the answer is played.
+    """
     with open("response_times.log", "a") as log_file:
         log_file.write(f"Answer played: {answer_time}, ")
 
 def log_call_ended(end_time):
+    """
+    Log the time when the call ends.
+    
+    :param end_time: The time when the call ends.
+    """
     with open("response_times.log", "a") as log_file:
         log_file.write(f"Call ended: {end_time}")
 
 # Funktion för att dela upp ord från en given text
 def splitWords(textinput):
+    """
+    Split the input text into words.
+    
+    :param textinput: The input text to be split.
+    :return: A list of words.
+    """
     return textinput.split()  # Dela upp texten i ord
 
 # Kontrollera om användarens input innehåller ett avslutningsord
 def text_exit_match(userInput):
+    """
+    Check if the user's input contains an exit command.
+    
+    :param userInput: The user's input text.
+    :return: True if an exit command is found, False otherwise.
+    """
     exit_list = ["out", "end", "exit", "bye", "goodbye", "stop", "close", "off"]
     userInput = splitWords(userInput)
 
@@ -48,11 +120,18 @@ def text_exit_match(userInput):
 
 # Funktion för att hämta svar från chatbotten
 def get_answer(input):
+    """
+    Get a response from the chatbot based on the user's input.
+    
+    :param input: The user's input text.
+    :return: The chatbot's response.
+    """
     if text_exit_match(input):
         hotword_detection(input)
         return input
 
     response = make_ask_response(input)  # Anropa get_ask-funktionen
+    log_answer_found(datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
     hotword_detection(input)
     print(response)
     log_answer_play(datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
@@ -62,6 +141,9 @@ def get_answer(input):
 
 # Funktion för att stoppa samtalet
 def stopCall():
+    """
+    Stop the ongoing call.
+    """
     global stop_listening
     if stop_listening:
         stop_listening()
@@ -72,10 +154,18 @@ def stopCall():
 
 
 def callback(r, audio):
+    """
+    Callback function to process the audio input.
+    
+    :param r: Recognizer instance.
+    :param audio: Audio data to be processed.
+    """
+    log_callback(datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
     print("in callback function")
 
     try:
         text = r.recognize_faster_whisper(audio, language="en")
+        log_audio_recognized(datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
         print("You said: " + text)
         if text == "":
             t = "Sorry, I could not understand audio."
@@ -89,7 +179,7 @@ def callback(r, audio):
             Thread(tts_engine.speak(t, "Female"))
             stopCall()
             return
-        
+        log_search_answer(datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
         get_answer(text)
         
     except sr.UnknownValueError:
@@ -120,6 +210,9 @@ def callback(r, audio):
 
 # Lyssna på användarens röstkommandon
 def listen_to_voice():
+    """
+    Listen to the user's voice commands.
+    """
     global stop_listening
     print("starting listening...")
 

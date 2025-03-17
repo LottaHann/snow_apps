@@ -18,19 +18,43 @@ expression_server = f'http://{rpi_ip}:5000'
 
 
 def log_status(status, time):
+    """
+    Log the status and time.
+    
+    :param status: The status to log.
+    :param time: The time to log.
+    """
     with open("response_times.log", "a") as log_file:
         log_file.write(f"received status: {status}, at time: {time}, ")
 
 def log_type(question_type):
+    """
+    Log the type of question.
+    
+    :param question_type: The type of question to log.
+    """
     with open("response_times.log", "a") as log_file:
         log_file.write(f"\nType: {question_type}, ")
 
 def log_question_received(question_time):
+    """
+    Log the time when a question is received.
+    
+    :param question_time: The time when a question is received.
+    """
     with open("response_times.log", "a") as log_file:
         log_file.write(f"Question received: {question_time}, ")
 
 
 def calculate_response_time(question_time, answer_time, end_time):
+    """
+    Calculate the response time and total time.
+    
+    :param question_time: The time when the question was received.
+    :param answer_time: The time when the answer was given.
+    :param end_time: The time when the call ended.
+    :return: A tuple containing the response time and total time.
+    """
     question_dt = datetime.strptime(question_time, "%Y-%m-%d %H:%M:%S")
     answer_dt = datetime.strptime(answer_time, "%Y-%m-%d %H:%M:%S")
     end_dt = datetime.strptime(end_time, "%Y-%m-%d %H:%M:%S")
@@ -41,6 +65,9 @@ def calculate_response_time(question_time, answer_time, end_time):
     return response_time, total_time
 
 def update_log_with_response_time():
+    """
+    Update the log file with response times.
+    """
     with open("response_times.log", "r") as log_file:
         lines = log_file.readlines()
 
@@ -65,6 +92,13 @@ def update_log_with_response_time():
 
     
 def send_face_data(data,post_name):
+    """
+    Send face data to the expression server.
+    
+    :param data: The face data to send.
+    :param post_name: The name of the post request.
+    :return: The response from the server.
+    """
     expression_ip = request.environ.get("REMOTE_ADDR")
     try:
         response = requests.get(f'http://{expression_ip}:5000/api/post?face={data}',timeout=0.0000000001)
@@ -77,12 +111,22 @@ def send_face_data(data,post_name):
         return None
 
 def text_to_speech(data):
+    """
+    Convert text to speech.
+    
+    :param data: The text to convert to speech.
+    """
     try:
         get_answer(data)
     except:
         return None
     
 def runCalling(input):
+    """
+    Handle the calling process based on the input.
+    
+    :param input: The input command.
+    """
     print(input)
     if input == "off":
         log_status("off",datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
@@ -108,6 +152,11 @@ queue = Queue()
 
 @app.route("/")
 def frontpage():
+    """
+    Render the front page.
+    
+    :return: The rendered front page template.
+    """
     ip = request.environ.get("HTTP_HOST", "Unknown")
     expression_ip = request.environ.get("REMOTE_ADDR", "Unknown")
     test = expression_ip
@@ -119,22 +168,47 @@ def frontpage():
 
 @app.route("/talk_to_snow")
 def talk_to_snow():
+    """
+    Render the talk_to_snow page.
+    
+    :return: The rendered talk_to_snow page template.
+    """
     return render_template("talk_to_snow/index.html")
 
 @app.route("/text_to_snow")
 def text_to_snow():
+    """
+    Render the text_to_snow page.
+    
+    :return: The rendered text_to_snow page template.
+    """
     return render_template("text_with_snow/index.html")
 
 @app.route("/face_expressions")
 def face_expressions():
+    """
+    Render the face_expressions page.
+    
+    :return: The rendered face_expressions page template.
+    """
     return render_template("face_expressions/index.html")
 
 @app.route("/statistics")
 def statistics():
+    """
+    Render the statistics page.
+    
+    :return: The rendered statistics page template.
+    """
     return render_template("statistics/index.html")
 
 @app.route("/api/post", methods=["GET"])
 def api_parse_sentence():
+    """
+    Parse the incoming API request and handle the data accordingly.
+    
+    :return: A response indicating the result of the request.
+    """
     print("request.args",request.args)
     face_data = request.args.get("face")
     touch_data = request.args.get("touch")

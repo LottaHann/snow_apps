@@ -14,6 +14,11 @@ nlp = spacy.load("en_core_web_sm")
 
 # Ladda intents.json från samma katalog som skriptet
 def load_intents():
+    """
+    Load intents from the intents.json file.
+    
+    :return: A dictionary containing intents.
+    """
     script_dir = os.path.dirname(os.path.abspath(__file__))  # Hitta katalogen där skriptet körs
     intents_file_path = os.path.join(script_dir, 'intents.json')  # Använd relativ sökväg
 
@@ -23,6 +28,11 @@ def load_intents():
 
 #Laod hotwords.json från samma katalog som skriptet
 def load_hotwords():
+    """
+    Load hotwords from the hotwords.json file.
+    
+    :return: A dictionary containing hotwords.
+    """
     script_dir = os.path.dirname(os.path.abspath(__file__))  # Hitta katalogen där skriptet körs
     hotwords_file_path = os.path.join(script_dir, 'hotwords.json')  # Använd relativ sökväg
 
@@ -32,6 +42,13 @@ def load_hotwords():
 
 # Funktion för att beräkna jaccard-similaritet mellan input och mönster
 def jaccard_similarity(text1, text2):
+    """
+    Calculate the Jaccard similarity between two texts.
+    
+    :param text1: The first text.
+    :param text2: The second text.
+    :return: The Jaccard similarity score.
+    """
     doc1 = nlp(text1)
     doc2 = nlp(text2)
 
@@ -43,6 +60,12 @@ def jaccard_similarity(text1, text2):
 
 # Funktion för att få ett svar baserat på användarinmatning
 def make_ask_response(user_input):
+    """
+    Get a response based on the user's input.
+    
+    :param user_input: The user's input text.
+    :return: A response from the chatbot.
+    """
     intents = load_intents()
     
     best_match = None
@@ -65,6 +88,11 @@ def make_ask_response(user_input):
 
 #Funktion för att hitta hotwords
 def hotword_detection(user_input):
+    """
+    Detect hotwords in the user's input and update the expression server.
+    
+    :param user_input: The user's input text.
+    """
     hotwords = load_hotwords()
     best_match = None
     highest_similarity = 0
