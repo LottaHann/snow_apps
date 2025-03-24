@@ -1,3 +1,4 @@
+
 def splitWords(textinput):
     """
     Split the input text into words.
@@ -23,3 +24,4 @@ def text_exit_match(userInput):
             print(f"Exit command detected: {attempt}")
             return True  # Avslutningsord har hittats
     return False
+

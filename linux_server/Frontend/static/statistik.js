@@ -44,14 +44,15 @@ function formatTime(ms) {
 // Funktion för att få sidnummer baserat på URL
 function getPageNumber() {
   const path = window.location.pathname;
+  console.log(path);
   switch (path) {
-      case '/talk_to_snow/':
+      case '/talk_to_snow':
           return "Talk app";
-      case '/text_with_snow/':
+      case '/text_to_snow':
           return "Text app";
-      case '/face_expressions/':
+      case '/face_expressions':
           return "Swaps Face app";
-      case '/statistics/':
+      case '/statistics':
           return "Statistics app";
       default:
           return 0; // Om sidan inte är igenkänd

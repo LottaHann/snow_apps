@@ -1,3 +1,56 @@
 
-Type: speech, Started listening: 2025-03-17 15:03:34, Callback called at: 2025-03-17 15:03:37, Callback called at: 2025-03-17 15:03:41, Callback called at: 2025-03-17 15:03:44, stop_listening called at: 2025-03-17 15:04:02, Find answer: 2025-03-17 15:04:02, Answer found: 2025-03-17 15:04:07, Answer played: 2025-03-17 15:04:07, Call ended: 2025-03-17 15:04:20
-Type: speech, Started listening: 2025-03-17 15:16:05, Callback called at: 2025-03-17 15:16:11, stop_listening called at: 2025-03-17 15:16:30, Find answer: 2025-03-17 15:16:30, Answer found: 2025-03-17 15:16:34, Answer played: 2025-03-17 15:16:34, Call ended: 2025-03-17 15:16:47
+Type: text, Question received: 2025-03-24 13:59:46, Find answer: 2025-03-24 13:59:46, Answer found: 2025-03-24 13:59:50, 
+Type: text, Question received: 2025-03-24 14:06:25, Find answer: 2025-03-24 14:06:25, Answer found: 2025-03-24 14:06:31, Answer played: 2025-03-24 14:06:31, Call ended: 2025-03-24 14:06:34
+Type: speech, received status on at time: 2025-03-24 14:06:47, Started listening: 2025-03-24 14:06:47, 
+Type: speech, received status off at time: 2025-03-24 14:06:48, stop_listening called at: 2025-03-24 14:06:48, Transcription time: 124.8864, Find answer: 2025-03-24 14:08:53, Answer found: 2025-03-24 14:08:53, Answer played: 2025-03-24 14:08:53, Call ended: 2025-03-24 14:08:56
+Type: speech, received status on at time: 2025-03-24 14:09:07, Started listening: 2025-03-24 14:09:07, 
+Type: speech, received status off at time: 2025-03-24 14:09:09, stop_listening called at: 2025-03-24 14:09:09, Transcription time: 13.025014, Find answer: 2025-03-24 14:09:22, Answer found: 2025-03-24 14:09:28, Answer played: 2025-03-24 14:09:28, Call ended: 2025-03-24 14:09:31
+Type: speech, received status on at time: 2025-03-24 14:12:51, Started listening: 2025-03-24 14:12:52, 
+Type: speech, received status off at time: 2025-03-24 14:12:53, stop_listening called at: 2025-03-24 14:12:53, Transcription time: 57.790414, Find answer: 2025-03-24 14:13:51, Answer found: 2025-03-24 14:13:55, Answer played: 2025-03-24 14:13:55, Call ended: 2025-03-24 14:13:57
+Type: speech, received status on at time: 2025-03-24 14:16:20, Started listening: 2025-03-24 14:16:20, 
+Type: speech, received status off at time: 2025-03-24 14:16:22, stop_listening called at: 2025-03-24 14:16:22, 
+Type: speech, received status on at time: 2025-03-24 14:17:48, Started listening: 2025-03-24 14:17:48, 
+Type: speech, received status off at time: 2025-03-24 14:17:50, stop_listening called at: 2025-03-24 14:17:50, 
+Type: speech, received status on at time: 2025-03-24 14:19:30, 
+Type: speech, received status off at time: 2025-03-24 14:19:32, 
+Type: speech, received status on at time: 2025-03-24 14:21:52, 
+Type: speech, received status off at time: 2025-03-24 14:21:55, 
+Type: speech, received status on at time: 2025-03-24 14:28:32, Started listening: 2025-03-24 14:28:32, 
+Type: speech, received status off at time: 2025-03-24 14:28:34, stop_listening called at: 2025-03-24 14:28:34, 
+Type: speech, received status on at time: 2025-03-24 14:33:04, Started listening: 2025-03-24 14:33:04, 
+Type: speech, received status off at time: 2025-03-24 14:33:06, stop_listening called at: 2025-03-24 14:33:06, 
+Type: speech, received status on at time: 2025-03-24 14:34:44, Started listening: 2025-03-24 14:34:44, 
+Type: speech, received status off at time: 2025-03-24 14:34:45, stop_listening called at: 2025-03-24 14:34:45, 
+Type: speech, received status on at time: 2025-03-24 14:42:49, Started listening: 2025-03-24 14:42:49, 
+Type: speech, received status off at time: 2025-03-24 14:42:51, stop_listening called at: 2025-03-24 14:42:51, 
+Type: speech, received status on at time: 2025-03-24 14:46:40, Started listening: 2025-03-24 14:46:40, 
+Type: speech, received status off at time: 2025-03-24 14:46:41, stop_listening called at: 2025-03-24 14:46:41, Transcription time: 9.54021, Find answer: 2025-03-24 14:46:51, Answer found: 2025-03-24 14:46:51, Answer played: 2025-03-24 14:46:51, Call ended: 2025-03-24 14:46:54
+Type: speech, received status on at time: 2025-03-24 14:50:47, Started listening: 2025-03-24 14:50:47, 
+Type: speech, received status off at time: 2025-03-24 14:50:48, stop_listening called at: 2025-03-24 14:50:48, Transcription time: 8.994448, Find answer: 2025-03-24 14:50:57, Answer found: 2025-03-24 14:51:00, Answer played: 2025-03-24 14:51:00, Call ended: 2025-03-24 14:51:02
+Type: speech, received status on at time: 2025-03-24 14:51:07, Started listening: 2025-03-24 14:51:07, 
+Type: speech, received status off at time: 2025-03-24 14:51:09, stop_listening called at: 2025-03-24 14:51:09, Transcription time: 10.392623, Find answer: 2025-03-24 14:51:20, Answer found: 2025-03-24 14:51:23, Answer played: 2025-03-24 14:51:23, Call ended: 2025-03-24 14:51:26
+Type: text, Question received: 2025-03-24 15:12:45, Find answer: 2025-03-24 15:12:45, Answer found: 2025-03-24 15:12:49, Answer played: 2025-03-24 15:12:49, Call ended: 2025-03-24 15:12:53
+Type: speech, received status on at time: 2025-03-24 15:13:41, Started listening: 2025-03-24 15:13:41, 
+Type: speech, received status off at time: 2025-03-24 15:13:43, stop_listening called at: 2025-03-24 15:13:43, Transcription time: 9.880938, Find answer: 2025-03-24 15:13:53, Answer found: 2025-03-24 15:13:56, Answer played: 2025-03-24 15:13:56, Call ended: 2025-03-24 15:14:00
+Type: speech, received status off at time: 2025-03-24 15:14:38, 
+Type: speech, received status on at time: 2025-03-24 15:17:37, Started listening: 2025-03-24 15:17:38, 
+Type: speech, received status off at time: 2025-03-24 15:17:39, stop_listening called at: 2025-03-24 15:17:39, Transcription time: 9.617117, Find answer: 2025-03-24 15:17:49, Answer found: 2025-03-24 15:17:49, Answer played: 2025-03-24 15:17:49, Call ended: 2025-03-24 15:17:52
+Type: speech, received status off at time: 2025-03-24 15:17:58, 
+Type: speech, received status on at time: 2025-03-24 15:36:54, Started listening: 2025-03-24 15:36:54, 
+Type: speech, received status off at time: 2025-03-24 15:36:59, stop_listening called at: 2025-03-24 15:36:59, Transcription time: 10.315496, Find answer: 2025-03-24 15:37:09, Answer found: 2025-03-24 15:37:13, Answer played: 2025-03-24 15:37:13, Call ended: 2025-03-24 15:37:16
+Type: speech, received status on at time: 2025-03-24 15:37:46, Started listening: 2025-03-24 15:37:46, 
+Type: speech, received status off at time: 2025-03-24 15:37:50, stop_listening called at: 2025-03-24 15:37:50, Transcription time: 10.215859, Find answer: 2025-03-24 15:38:00, Answer found: 2025-03-24 15:38:03, Answer played: 2025-03-24 15:38:03, Call ended: 2025-03-24 15:38:22
+Type: speech, received status on at time: 2025-03-24 15:38:30, Started listening: 2025-03-24 15:38:30, 
+Type: speech, received status off at time: 2025-03-24 15:38:34, stop_listening called at: 2025-03-24 15:38:34, Transcription time: 10.026644, Find answer: 2025-03-24 15:38:44, Answer found: 2025-03-24 15:38:47, Answer played: 2025-03-24 15:38:47, Call ended: 2025-03-24 15:38:59
+Type: speech, received status off at time: 2025-03-24 15:39:32, 
+Type: text, Question received: 2025-03-24 15:42:11, Find answer: 2025-03-24 15:42:11, Answer found: 2025-03-24 15:42:15, Answer played: 2025-03-24 15:42:15, Call ended: 2025-03-24 15:42:24
+Type: text, Question received: 2025-03-24 15:42:31, Find answer: 2025-03-24 15:42:31, Answer found: 2025-03-24 15:42:35, Answer played: 2025-03-24 15:42:35, Call ended: 2025-03-24 15:42:44
+Type: speech, received status on at time: 2025-03-24 15:43:13, Started listening: 2025-03-24 15:43:13, 
+Type: speech, received status off at time: 2025-03-24 15:43:22, stop_listening called at: 2025-03-24 15:43:22, Transcription time: 9.846259, Find answer: 2025-03-24 15:43:32, Answer found: 2025-03-24 15:43:36, Answer played: 2025-03-24 15:43:36, Call ended: 2025-03-24 15:43:39
+Type: speech, received status off at time: 2025-03-24 15:43:51, 
+Type: text, Question received: 2025-03-24 15:44:08, Find answer: 2025-03-24 15:44:08, Answer found: 2025-03-24 15:44:12, Answer played: 2025-03-24 15:44:12, Call ended: 2025-03-24 15:44:17
+Type: text, Question received: 2025-03-24 15:44:17, Find answer: 2025-03-24 15:44:17, Answer found: 2025-03-24 15:44:20, Answer played: 2025-03-24 15:44:20, Call ended: 2025-03-24 15:44:25
+Type: text, Question received: 2025-03-24 15:44:26, Find answer: 2025-03-24 15:44:26, Answer found: 2025-03-24 15:44:30, Answer played: 2025-03-24 15:44:30, Call ended: 2025-03-24 15:44:43
+Type: speech, received status on at time: 2025-03-24 16:33:01, Started listening: 2025-03-24 16:33:01, 
+Type: speech, received status off at time: 2025-03-24 16:33:05, stop_listening called at: 2025-03-24 16:33:05, Transcription time: 9.616214, Find answer: 2025-03-24 16:33:15, Answer found: 2025-03-24 16:33:18, Answer played: 2025-03-24 16:33:18, Call ended: 2025-03-24 16:33:21
+Type: speech, received status off at time: 2025-03-24 16:34:52, 

@@ -1,5 +1,5 @@
        // Funktion för att läsa data från localStorage
-       function readData() {
+    function readData() {
         let allData = localStorage.getItem('pageData');
         if (allData === null) {
             return [];
@@ -33,5 +33,5 @@
     }
 
     // Läsa data från localStorage och rendera tabellen
-    const data = readData();
+    let data = readData();
     renderTable(data);

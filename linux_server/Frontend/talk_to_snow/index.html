@@ -7,10 +7,10 @@
     <title>Talk to Snow</title>
     <link rel="icon" href="../../img/logo_png.png" type="image/x-icon">
     <!-- Bootstrap 5 CSS -->
-    <link href="../bootstrap.min.css" rel="stylesheet"
+    <link href="../static/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="../robot.css">
+    <link rel="stylesheet" href="../static/robot.css">
     <!-- ../../img/arcada_blac_text.png -->
 
 </head>
@@ -23,7 +23,7 @@
         <div class="container lag-bottons" style="  max-width: 100% !important;">
             <!-- Navbar brand with logo and text -->
             <a href="../">
-                <img class="custom-logo " src="../img/nedladdning.svg" alt="Logo">
+                <img class="custom-logo " src="../static/img/techlabs_logo.svg" alt="Logo">
             </a>
 
 
@@ -64,8 +64,6 @@
 
 
         </div>
-
-        </div>
     </nav>
 
     <!-- Main content -->
@@ -74,8 +72,11 @@
     <div class="container mt-5">
         <h1 class="text-center">Talk to Snow</h1>
         <div class="d-flex justify-content-center mt-4">
-            <button class="btn btn-success mx-2" onclick="sendAPICall('on')">On</button>
-            <button class="btn btn-danger mx-2" onclick="sendAPICall('off')">Off</button>
+            <button class="btn btn-success mx-2" onclick="sendWebSocketMessage('on')">On</button>
+            <button class="btn btn-danger mx-2" onclick="sendWebSocketMessage('off')">Off</button>
+        </div>
+        <div class="d-flex justify-content-center mt-4">
+            <div id="statusDisplay" class="status-display"></div>
         </div>
     </div>
 
@@ -87,7 +88,7 @@
             </div>
        
             <div class="exit-button clickable-image-Exit">
-                <a href="../" class="btn btn btn-dark" onclick="sendAPICallOff()" id="stopBtn" style="width: 10rem;">Exit</a>
+                <a href="../" class="btn btn btn-dark" onclick="sendWebSocketMessage('off')" id="stopBtn" style="width: 10rem;">Exit</a>
 
             </div>
         </div>
@@ -95,31 +96,67 @@
 
 
     <!-- Bootstrap JS and dependencies -->
-    <script src="../bootstrap.bundle.min.js"></script>
+    <script src="../static/bootstrap.bundle.min.js"></script>
     <script>
 
     </script>
 
 
-    <script src="../robot.js"></script>
-    <script src="../statistik.js"></script>
+    <script src="../static/robot.js"></script>
+    <script src="../static/statistik.js"></script>
 
     <script>
-        async function sendAPICall(status) {
-            console.log(`Sending API call with status '${status}'...`);
-            try {
-                const response = await fetch(`http://localhost:5100/api/post?call=${status}`);
-                console.log("Response from API call:", response);
-                console.log("Response ok:", response.ok);
-                if (!response.ok) {
-                    console.log("Something went wrong with the API call.");
-                    return;
+        let websocket;
+
+        function connectWebSocket() {
+            websocket = new WebSocket("ws://localhost:8765");
+
+            websocket.onopen = function(event) {
+                console.log("WebSocket is open now.");
+            };
+
+            websocket.onclose = function(event) {
+                console.log("WebSocket is closed now.");
+            };
+
+            websocket.onmessage = function(event) {
+                console.log("WebSocket message received:", event.data);
+                const data = JSON.parse(event.data);
+                const statusDisplay = document.getElementById("statusDisplay");
+
+                if (data.status === "listening") {
+                    statusDisplay.innerHTML = "Listening...";
+                } else if (data.status === "processing") {
+                    statusDisplay.innerHTML = "Thinking...";
+                } else if (data.status === "responding") {
+                    statusDisplay.innerHTML = "";
                 }
-                console.log(`API call with status '${status}' was successful.`);
-            } catch (error) {
-                console.error("An error occurred during the API call:", error);
+            };
+
+            websocket.onerror = function(event) {
+                console.error("WebSocket error observed:", event);
+            };
+        }
+
+        function sendWebSocketMessage(status) {
+            if (websocket && websocket.readyState === WebSocket.OPEN) {
+                const message = JSON.stringify({ command: status });
+                websocket.send(message);
+                console.log(`Sent: ${message}`);
+
+                const statusDisplay = document.getElementById("statusDisplay");
+                if (status === "on") {
+                    statusDisplay.innerHTML = '<div class="spinner-border" role="status"><span class="sr-only">Loading...</span></div>';
+                } else if (status === "off") {
+                    statusDisplay.innerHTML = "";
+                }
+            } else {
+                console.error("WebSocket is not open. Unable to send message.");
             }
         }
+
+        // Connect to WebSocket when the page loads
+        window.onload = connectWebSocket;
     </script>
 
 </body>

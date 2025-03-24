@@ -8,7 +8,9 @@ from datetime import datetime
 
 
 # Lägg till sökvägen till din Flask-applikation
-sys.path.append('D:/2024/Arcada robot/ArcadaRobot/Linux/Flask')
+sys.path.append('/home/snow/Documents/snow_apps/linux_server/Backend')
+from log_funcs import log_started_listening, log_callback, log_search_answer, log_answer_found, log_answer_play, log_call_ended
+
 # Initiera Text-to-Speech motorn
 tts_engine = TextToSpeechEngine()
 # Global variabel för att styra programflödet
@@ -19,77 +21,7 @@ stop_listening = None
 r = sr.Recognizer()
 m = sr.Microphone()
 
-def log_audio_recognized(time):
-    """
-    Log the time when audio is recognized.
-    
-    :param time: The time when audio is recognized.
-    """
-    with open("response_times.log", "a") as log_file:
-        log_file.write(f"Audio recognized: {time}, ")
 
-def log_stop_listening(time):
-    """
-    Log the time when stop_listening is called.
-    
-    :param time: The time when stop_listening is called.
-    """
-    with open("response_times.log", "a") as log_file:
-        log_file.write(f"stop_listening called at: {time}, ")
-
-def log_callback(time):
-    """
-    Log the time when the callback function is called.
-    
-    :param time: The time when the callback function is called.
-    """
-    with open("response_times.log", "a") as log_file:
-        log_file.write(f"Callback called at: {time}, ")
-
-def log_search_answer(time):
-    """
-    Log the time when searching for an answer.
-    
-    :param time: The time when searching for an answer.
-    """
-    with open("response_times.log", "a") as log_file:
-        log_file.write(f"Find answer: {time}, ")
-
-def log_answer_found(time):
-    """
-    Log the time when an answer is found.
-    
-    :param time: The time when an answer is found.
-    """
-    with open("response_times.log", "a") as log_file:
-        log_file.write(f"Answer found: {time}, ")
-
-def log_started_listening(time):
-    """
-    Log the time when the system starts listening.
-    
-    :param time: The time when the system starts listening.
-    """
-    with open("response_times.log", "a") as log_file:
-        log_file.write(f"Started listening: {time}, ")
-
-def log_answer_play(answer_time):
-    """
-    Log the time when the answer is played.
-    
-    :param answer_time: The time when the answer is played.
-    """
-    with open("response_times.log", "a") as log_file:
-        log_file.write(f"Answer played: {answer_time}, ")
-
-def log_call_ended(end_time):
-    """
-    Log the time when the call ends.
-    
-    :param end_time: The time when the call ends.
-    """
-    with open("response_times.log", "a") as log_file:
-        log_file.write(f"Call ended: {end_time}")
 
 # Funktion för att dela upp ord från en given text
 def splitWords(textinput):

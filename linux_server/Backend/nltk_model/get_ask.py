@@ -4,8 +4,7 @@ import os
 from nltk.metrics import jaccard_distance
 import random
 import requests
-from chat import get_response
-rpi_ip = "193.166.180.12"
+rpi_ip = "192.168.99.200"
 expression_server = f'http://{rpi_ip}:5000'
 update_expression_endpoint = f'{expression_server}/update_expression'
 
@@ -94,24 +93,25 @@ def hotword_detection(user_input):
     :param user_input: The user's input text.
     """
     hotwords = load_hotwords()
-    best_match = None
-    highest_similarity = 0
+    match = None
 
-    for hotword in hotwords["hotwords"]:
-        for pattern in hotword["patterns"]:
-            similarity = jaccard_similarity(user_input, pattern)
-            if similarity > highest_similarity:
-                highest_similarity = similarity
-                best_match = hotword
+    for group in hotwords["hotwords"]:
+        for hotword in group["patterns"]:
+            if hotword in user_input:
+                match = group
+                break
     
-    if highest_similarity > 0.0:
-        #make http request to expression server
-        hotword = best_match["hotword"]
-        print(f"Hotword detected: {hotword}")
-        response = requests.get(f'{update_expression_endpoint}?name={hotword}')
-        print(response)
+
+    if match:
+        # Uppdatera uttryck på servern
+        data = {"expression": match["hotword"]}
+        try:
+            response = requests.post(update_expression_endpoint, json=data)
+            response.raise_for_status()
+        except requests.exceptions.RequestException as e:
+            print(f"Error updating expression: {e}")
     else:
-        print("No hotword detected")
+        print("No hotword detected.")
 
 # Om du vill testa funktionen direkt
 if __name__ == "__main__":

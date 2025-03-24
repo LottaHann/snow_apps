@@ -92,7 +92,7 @@ def log_status(status, time):
     :param time: The time to log.
     """
     with open("response_times.log", "a") as log_file:
-        log_file.write(f"received status: {status}, at time: {time}, ")
+        log_file.write(f"received status {status} at time: {time}, ")
 
 def log_type(question_type):
     """
@@ -111,3 +111,13 @@ def log_question_received(question_time):
     """
     with open("response_times.log", "a") as log_file:
         log_file.write(f"Question received: {question_time}, ")
+
+def log_transcription_time(time):
+    """
+    Log the time for transcription.
+    
+    :param time: The time for transcription.
+    """
+    with open("response_times.log", "a") as log_file:
+        log_file.write(f"Transcription time: {time}, ")
+        

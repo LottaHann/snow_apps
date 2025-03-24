@@ -7,36 +7,19 @@
     <title>Snow</title>
     <link rel="icon" href="../../img/logo_png.png" type="image/x-icon">
     <!-- Bootstrap 5 CSS -->
-    <link href="../bootstrap.min.css" rel="stylesheet"
+    <link href="../static/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="../robot.css">
+    <link rel="stylesheet" href="../static/robot.css">
     <style>
-        .container_Swaps_face {
-            text-align: center;
-            margin-bottom: 20px;
-            border: 10px solid #0068DE;
-            border-top-width: 40px;
-            min-width: 350px;
-            max-width: 350px;
-
-            padding: 10px;
-            /* padding-bottom: 30px; */
-            border-radius: 20px;
-            text-align: center;
-
-        }
-
         .container_Swaps_face {
             position: relative;
             text-align: center;
             margin-bottom: 20px;
             border: 10px solid #0068DE;
             border-top-width: 40px;
-            min-width: 350px;
-            max-width: 350px;
-            min-height: 370px;
-            max-height: 370px;
+            max-height: 750px;
+            min-width: 800px;
             padding: 10px;
             border-radius: 20px;
             text-align: center;
@@ -45,18 +28,13 @@
         .top-text {
             position: absolute;
             top: -30px;
-            /* Adjust the positioning as needed */
             left: 50%;
-            /* align-items: center; */
             text-align: center;
             transform: translateX(-50%);
             background-color: #0068DE;
-            /* Match the container border color */
             color: white;
-            /* Set the text color */
             font-size: 20px;
             font-weight: bold;
-
         }
 
         .control-panel {
@@ -66,7 +44,6 @@
         }
 
         .input-container {
-            /* display: flex; */
             align-items: center;
         }
 
@@ -75,36 +52,21 @@
             padding: 8px;
             font-size: 16px;
             margin-right: 10px;
-            border: 1px solid #ccc;
+            border: 5px solid #0068DE;
             border-radius: 5px;
-        }
-
-        .selectedInputTextarea {
-            width: 90%;
-            /* Use 100% width to fill the container */
-            height: 150px;
-            /* Adjust the height as needed */
-            padding: 8px;
-            font-size: 16px;
-            margin-right: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            resize: vertical;
-            /* Allow vertical resizing */
         }
 
         .submit-button {
             font-size: 16px;
             margin: 10px;
             padding: 8px 20px;
-            /* border: none; */
             border-radius: 5px;
             cursor: pointer;
             background-color: #004DBE;
             color: white;
         }
 
-        .submit-button :hover {
+        .submit-button:hover {
             background-color: #0068DE;
         }
 
@@ -127,7 +89,6 @@
             background-color: #f0f0f0;
         }
     </style>
-    <!-- ../../img/arcada_blac_text.png -->
 </head>
 
 <body>
@@ -138,7 +99,7 @@
         <div class="container lag-bottons" style="  max-width: 100% !important;">
             <!-- Navbar brand with logo and text -->
             <a href="../">
-                <img class="custom-logo " src="../img/nedladdning.svg" alt="Logo">
+                <img class="custom-logo " src="../static/img/techlabs_logo.svg" alt="Logo">
             </a>
 
 
@@ -195,27 +156,17 @@
     <!-- Main content -->
     <!-- template info html  -->
 
-    <div class=" p-5 justify-content-center " style="padding-bottom: 2rem !important;">
+    <div class="p-5 " style="padding-bottom: 2rem !important; padding-left: 17rem !important; padding-right: 17rem !important; ">
 
-        <div class="  ">
-            <div class="row  d-flex justify-content-center">
-                <div class="col-md-12 text-left mb-4">
-                    <div class="row">
-                        <div class="col-md-6">
+        <div class="">
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-12 text-center mb-4">
+                    <!-- <div class="row"> -->
+                        <div class="col-md-10" style="width: 100% !important ; ">
                             <!-- <h1>Yrkeshögskolan Arcada</h1> -->
-                            <h2 class="css-kj9vo7 custom-h2">Snow</h2>
-                            <p class="custom-text" style="padding-bottom: 50px;">
-                                Here you can use swaps face to change the robot's face and send to the robot's face
-                            </p>
-
-
-                        </div>
-
-                        <div class="col-md-6 text-right  custom-techlabs-img ">
-                            <!-- here is Swaps Face -->
                             <div class="container_Swaps_face">
-
                                 <div class="top-text">Swaps Face</div>
+    
                                 <p>Click on an available expression:</p>
                                 <div class="expression-list">
                                     <div class="expression-item" onclick="setExpression('smile')">smile</div>
@@ -252,7 +203,7 @@
                                             
                                             console.log("Sending request with face:", faceInput.value);
                                             // const response = await fetch(`http://{{ip}}/api/post?touch=${faceInput.value}`);
-                                            const response = await fetch(`http://193.166.180.12:5000/update_expression?name=${faceInput.value}`);
+                                            const response = await fetch(`http://192.168.99.200:5000/update_expression?name=${faceInput.value}`);
                                     
                                             if (!response.ok) {
                                                 console.log("Something went wrong.");
@@ -268,7 +219,7 @@
                                 </script>
                             </div>
                         </div>
-                    </div>
+                    <!-- </div> -->
                 </div>
             </div>
         </div>
@@ -290,14 +241,14 @@
 
 
     <!-- Bootstrap JS and dependencies -->
-    <script src="../bootstrap.bundle.min.js"></script>
+    <script src="../static/bootstrap.bundle.min.js"></script>
     <script>
 
     </script>
 
 
-    <script src="../robot.js"></script>
-    <script src="../statistik.js"></script>
+    <script src="../static/robot.js"></script>
+    <script src="../static/statistik.js"></script>
 
 </body>
 
