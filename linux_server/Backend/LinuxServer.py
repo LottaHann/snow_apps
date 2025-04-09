@@ -109,6 +109,12 @@ def statistics():
     """
     return render_template("statistics/index.html")
 
+@app.route("/talk", methods=["POST"])
+def say_text():
+    text = request.args.get("text")
+    respond(text, "text")
+    return "talk ok"
+
 @app.route("/api/post", methods=["GET"])
 def api_parse_sentence():
     """
